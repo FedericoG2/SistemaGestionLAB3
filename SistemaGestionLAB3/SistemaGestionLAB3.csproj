@@ -53,6 +53,18 @@
     <Compile Include="Vista\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\FrmOlvideContraseña.cs">
@@ -70,6 +82,12 @@
     <EmbeddedResource Include="Vista\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -78,6 +96,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Vista\FrmOlvideContraseña.resx">
       <DependentUpon>FrmOlvideContraseña.cs</DependentUpon>
@@ -98,11 +117,51 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+
   <ItemGroup>
-    <Content Include="Modelo\DbLogin.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="Resources\fondoInicio.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoPrincipal - copia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgUsuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgVentas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgCompras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgInventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgAgenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgProveedores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgMovimientos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgCerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgGuardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgAbrir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgNuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgCerrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sonidoInicio.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
