@@ -199,5 +199,14 @@ namespace SistemaGestionLAB3.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream sonidoInicio {
+            get {
+                return ResourceManager.GetStream("sonidoInicio", resourceCulture);
+            }
+        }
     }
 }

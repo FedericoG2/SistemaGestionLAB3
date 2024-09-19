@@ -13,6 +13,7 @@ namespace SistemaGestionLAB3.Vista
 {
     public partial class FrmRegistrarse : Form
     {
+
         public FrmRegistrarse()
         {
             InitializeComponent();
@@ -20,8 +21,7 @@ namespace SistemaGestionLAB3.Vista
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            FrmLogin frmLogin = new FrmLogin();
-            frmLogin.ShowDialog();
+            this.Close();
         }
 
         private void FrmRegistrarse_Load(object sender, EventArgs e)
@@ -48,9 +48,7 @@ namespace SistemaGestionLAB3.Vista
             // Si el registro fue exitoso, cerrar el formulario actual y abrir el formulario de inicio de sesión
             if (registroExitoso)
             {
-                this.Hide();
-                FrmLogin frmLogin = new FrmLogin();
-                frmLogin.Show();
+                this.Close();
             }
         }
     }

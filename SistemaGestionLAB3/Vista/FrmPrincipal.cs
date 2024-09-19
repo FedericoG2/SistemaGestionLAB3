@@ -21,10 +21,9 @@ namespace SistemaGestionLAB3
             this.Resize += new EventHandler(Form1_Resize);
 
             //Reproduccion de sonido Apertura sistema
-            //SoundPlayer player = new SoundPlayer();
-            //player.SoundLocation = @"C:\Users\mauro\OneDrive\Desktop\facultad\lab3Prueba\SistemaGestionLAB3\Resources\sonidoInicio.wav";
-            //player.Play();
-
+            SoundPlayer player = new SoundPlayer();
+            player.Stream = Properties.Resources.sonidoInicio;
+            player.Play();
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
