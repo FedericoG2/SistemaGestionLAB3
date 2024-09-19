@@ -69,7 +69,6 @@ namespace SistemaGestionLAB3.Controlador
             {
                 MessageBox.Show("Error al cambiar contraseña!" + e, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             return resultado;
         }
 
@@ -77,7 +76,6 @@ namespace SistemaGestionLAB3.Controlador
         public bool RegistrarUsuario(string nombre, string password)
         {
             bool resultado = false;
-
             // Primero, verificar si el usuario ya existe
             string queryVerificar = "SELECT COUNT(*) FROM DbLogin WHERE NOMBRE = ?";
             //string queryInsertar = "INSERT INTO DbLogin (NOMBRE,PASSWORD) VALUES (?,?)";
@@ -88,7 +86,6 @@ namespace SistemaGestionLAB3.Controlador
                 using (OleDbConnection conexion = new OleDbConnection(ruta))
                 {
                     conexion.Open();
-
                     // Verificar si el usuario ya existe
                     using (OleDbCommand comandoVerificar = new OleDbCommand(queryVerificar, conexion))
                     {
@@ -124,7 +121,6 @@ namespace SistemaGestionLAB3.Controlador
             {
                 MessageBox.Show("Error al registrar usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             return resultado;
         }
     }

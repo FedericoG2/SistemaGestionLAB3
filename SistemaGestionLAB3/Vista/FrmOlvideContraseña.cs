@@ -25,8 +25,9 @@ namespace SistemaGestionLAB3.Vista
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            FrmLogin frmLogin = new FrmLogin();
-            frmLogin.ShowDialog();
+           this.Close();
+            //FrmLogin frmLogin = new FrmLogin();
+            //frmLogin.ShowDialog();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
