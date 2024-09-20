@@ -21,19 +21,29 @@ namespace SistemaGestionLAB3
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string nombreUsuario = txtNombreUsuario.Text;
-            string passUsuario = txtContraseña.Text;
 
-            // instanciamos la clase
-            DbLogin dbLogin = new DbLogin();
-            if (dbLogin.VerificarUsuario(nombreUsuario, passUsuario))
-            {
-                MessageBox.Show("Ingreso exitoso!", "Bienvenido!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrecto!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Crear el formulario de carga
+            FrmInicio inicioForm = new FrmInicio();
+
+            // Mostrar el formulario de carga de manera no modal
+            inicioForm.Show();
+
+            // Cerrar el formulario actual (Login)
+            this.Hide();
+
+            //string nombreUsuario = txtNombreUsuario.Text;
+            //string passUsuario = txtContraseña.Text;
+
+            //// instanciamos la clase
+            //DbLogin dbLogin = new DbLogin();
+            //if (dbLogin.VerificarUsuario(nombreUsuario, passUsuario))
+            //{
+            //    MessageBox.Show("Ingreso exitoso!", "Bienvenido!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Usuario o contraseña incorrecto!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void linkOlvideContraseña_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -44,8 +54,23 @@ namespace SistemaGestionLAB3
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            FrmRegistrarse frmRegistrarse = new FrmRegistrarse();
-            frmRegistrarse.ShowDialog();
+
+            // Crear el formulario de carga
+            FrmInicio inicioForm = new FrmInicio();
+
+            // Mostrar el formulario de carga de manera no modal
+            inicioForm.Show();
+
+            // Cerrar el formulario actual (Login)
+            this.Hide();
+
+            //FrmRegistrarse frmRegistrarse = new FrmRegistrarse();
+            //frmRegistrarse.ShowDialog();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
