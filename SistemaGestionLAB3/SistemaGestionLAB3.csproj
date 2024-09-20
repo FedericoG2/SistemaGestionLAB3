@@ -179,6 +179,15 @@
     <None Include="Resources\imgCerrar1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ModeloDB\DbArticulos.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModeloDB\DbClientes.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModeloDB\DbProveedores.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\sonidoInicio.wav" />
   </ItemGroup>
   <ItemGroup>
