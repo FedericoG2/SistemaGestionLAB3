@@ -30,7 +30,7 @@ Esta herramienta permite a las empresas llevar un control eficiente de usuarios,
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu_usuario/gestion-empresarial.git
+    git clone URL Proyecto
     ```
 2. Abre el proyecto en Visual Studio.
 3. Configura la base de datos Access y asegúrate de que el archivo `.accdb` esté en la ubicación correcta.
@@ -43,6 +43,9 @@ Esta herramienta permite a las empresas llevar un control eficiente de usuarios,
 - [@Mercado-tomas](https://github.com/Mercado-tomas) - Tomás Mercado
 - [@Maurofavre](https://github.com/Maurofavre) - Mauro Favre
 - [@FedericoG2](https://github.com/FedericoG2) - Federico Gonzalez
+- [@lourdesgarcia02](https://github.com/lourdesgarcia02) - Lourdes Garcia
+- [@LucianaG2004](https://github.com/LucianaG2004) - Luciana Garcia
+- [@agusdiaz1](https://github.com/agusdiaz1) - Agustina Diaz
 
 
 ## Contribución
