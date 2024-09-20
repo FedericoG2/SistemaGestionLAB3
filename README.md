@@ -39,6 +39,8 @@ Esta herramienta permite a las empresas llevar un control eficiente de usuarios,
 ## Contribuidores
 
 
+# Lista de Usuarios
+
 - [@JulM10](https://github.com/JulM10) - Julio Madero
 - [@Mercado-tomas](https://github.com/Mercado-tomas) - Tomás Mercado
 - [@Maurofavre](https://github.com/Maurofavre) - Mauro Favre
@@ -46,6 +48,8 @@ Esta herramienta permite a las empresas llevar un control eficiente de usuarios,
 - [@lourdesgarcia02](https://github.com/lourdesgarcia02) - Lourdes Garcia
 - [@LucianaG2004](https://github.com/LucianaG2004) - Luciana Garcia
 - [@agusdiaz1](https://github.com/agusdiaz1) - Agustina Diaz
+- [@BrunoHeredia03](https://github.com/BrunoHeredia03) - Bruno Heredia
+
 
 
 ## Contribución
