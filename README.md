@@ -39,7 +39,7 @@ Esta herramienta permite a las empresas llevar un control eficiente de usuarios,
 ## Contribuidores
 
 
-# Lista de Usuarios
+
 
 - [@JulM10](https://github.com/JulM10) - Julio Madero
 - [@Mercado-tomas](https://github.com/Mercado-tomas) - Tomás Mercado
