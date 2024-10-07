@@ -19,32 +19,37 @@ namespace SistemaGestionLAB3
             InitializeComponent();
         }
 
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
+            private void btnIngresar_Click(object sender, EventArgs e)
+            {
+                if (txtContraseña.Text == "" || txtNombreUsuario.Text == "")
+                {
+                    MessageBox.Show("Ingrese Datos Necesarios"); 
+                }else
+                {
+                    // Crear el formulario de carga
+                    FrmInicio inicioForm = new FrmInicio();
 
-            // Crear el formulario de carga
-            FrmInicio inicioForm = new FrmInicio();
+                // Mostrar el formulario de carga de manera no modal
+                inicioForm.Show();
 
-            // Mostrar el formulario de carga de manera no modal
-            inicioForm.Show();
+                // Cerrar el formulario actual (Login)
+                this.Hide();
 
-            // Cerrar el formulario actual (Login)
-            this.Hide();
+                    //string nombreUsuario = txtNombreUsuario.Text;
+                    //string passUsuario = txtContraseña.Text;
 
-            //string nombreUsuario = txtNombreUsuario.Text;
-            //string passUsuario = txtContraseña.Text;
-
-            //// instanciamos la clase
-            //DbLogin dbLogin = new DbLogin();
-            //if (dbLogin.VerificarUsuario(nombreUsuario, passUsuario))
-            //{
-            //    MessageBox.Show("Ingreso exitoso!", "Bienvenido!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Usuario o contraseña incorrecto!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-        }
+                    //// instanciamos la clase
+                    //DbLogin dbLogin = new DbLogin();
+                    //if (dbLogin.VerificarUsuario(nombreUsuario, passUsuario))
+                    //{
+                    //    MessageBox.Show("Ingreso exitoso!", "Bienvenido!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Usuario o contraseña incorrecto!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //}
+                }
+            }
 
         private void linkOlvideContraseña_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -69,6 +74,11 @@ namespace SistemaGestionLAB3
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

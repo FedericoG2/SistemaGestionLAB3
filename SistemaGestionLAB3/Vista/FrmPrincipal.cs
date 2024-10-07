@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGestionLAB3.Vista;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,6 +50,12 @@ namespace SistemaGestionLAB3
         {
             this.Close();
             Application.Exit();
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            frmInventario formInventario = new frmInventario();
+            formInventario.Show();
         }
     }
 }
