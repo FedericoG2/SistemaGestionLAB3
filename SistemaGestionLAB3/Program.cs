@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGestionLAB3.Vista;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace SistemaGestionLAB3
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmLogin()/*FrmInicio()*/);
+            //Application.Run(new frmInventario());
+
         }
     }
 }
