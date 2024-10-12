@@ -19,6 +19,7 @@ namespace SistemaGestionLAB3
         public FrmInicio()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             this.Text = "Inicio";
 
@@ -51,5 +52,6 @@ namespace SistemaGestionLAB3
                 formPrincipal.Show();
             }
         }
+
     }
 }

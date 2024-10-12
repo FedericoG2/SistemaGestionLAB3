@@ -15,11 +15,17 @@ namespace SistemaGestionLAB3.Vista
         public frmInventario()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void accionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

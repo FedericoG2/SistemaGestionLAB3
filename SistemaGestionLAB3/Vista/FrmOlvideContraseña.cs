@@ -16,6 +16,7 @@ namespace SistemaGestionLAB3.Vista
         public FrmOlvideContraseña()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void FrmOlvideContraseña_Load(object sender, EventArgs e)
@@ -25,9 +26,10 @@ namespace SistemaGestionLAB3.Vista
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-           this.Close();
-            //FrmLogin frmLogin = new FrmLogin();
-            //frmLogin.ShowDialog();
+            // Cancela el formulario y abre el Login
+            FrmLogin frmLogin = new FrmLogin();
+            this.Close();
+            frmLogin.Show();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)

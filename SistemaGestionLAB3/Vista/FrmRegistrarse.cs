@@ -17,6 +17,7 @@ namespace SistemaGestionLAB3.Vista
         public FrmRegistrarse()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

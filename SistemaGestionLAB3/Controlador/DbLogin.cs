@@ -5,15 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 
 namespace SistemaGestionLAB3.Controlador
 {
     public class DbLogin
     {
-        // ruta
-        private string ruta = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\DbLogin.accdb";
+        // Ruta
+        private string ruta = @"Provider =Microsoft.ACE.OLEDB.12.0;Data Source=ModeloDB\Inventario_db.accdb";
 
-        // metodo para ingresar
+        // Metodo para ingresar
         public bool VerificarUsuario(string nombre, string password)
         {
             bool loginOk = false;
@@ -23,12 +24,13 @@ namespace SistemaGestionLAB3.Controlador
                 using (OleDbConnection conexion = new OleDbConnection(ruta))
                 {
                     conexion.Open();
-                    string query = "SELECT COUNT(*) FROM DbLogin WHERE NOMBRE = ? AND PASSWORD = ?";
-                    using (OleDbCommand comando = new OleDbCommand(query, conexion))
+                    string queryVerificar = "SELECT COUNT(*) FROM Usuarios WHERE Username = ? AND Contraseña = ?";
+                    using (OleDbCommand comando = new OleDbCommand(queryVerificar, conexion))
                     {
                         comando.Parameters.AddWithValue("@NOMBRE", nombre);
                         comando.Parameters.AddWithValue("@PASSWORD", password);
-                        // agregamos un valor como contador
+
+                        // Agregamos un valor como contador
                         int count = (int)comando.ExecuteScalar();
                         if (count == 1)
                         {
@@ -44,11 +46,11 @@ namespace SistemaGestionLAB3.Controlador
             return loginOk;
         }
 
-        // metodo olvide contraseña
+        // Metodo olvide contraseña
         public bool OlvideContraseña(string nombre, string nuevoPassword)
         {
             bool resultado = false;
-            string query = "UPDATE DbLogin SET PASSWORD = ? WHERE NOMBRE = ?";
+            string query = "UPDATE Usuarios SET Contraseña = ? WHERE Username = ?";
             try
             {
                 using (OleDbConnection conexion = new OleDbConnection(ruta))
@@ -58,9 +60,9 @@ namespace SistemaGestionLAB3.Controlador
                     {
                         comando.Parameters.AddWithValue("?", nuevoPassword);
                         comando.Parameters.AddWithValue("?", nombre);
-                        // verificamos
+                        // Verificamos
                         int filasAfectadas = comando.ExecuteNonQuery();
-                        // devuelve true si algo se actualizo
+                        // Devuelve true si algo se actualizo
                         resultado = filasAfectadas > 0;
                     }
                 }
@@ -72,14 +74,14 @@ namespace SistemaGestionLAB3.Controlador
             return resultado;
         }
 
-        // metodo para registrarse
+        // Metodo para registrarse
         public bool RegistrarUsuario(string nombre, string password)
         {
             bool resultado = false;
             // Primero, verificar si el usuario ya existe
-            string queryVerificar = "SELECT COUNT(*) FROM DbLogin WHERE NOMBRE = ?";
-            //string queryInsertar = "INSERT INTO DbLogin (NOMBRE,PASSWORD) VALUES (?,?)";
-            string queryInsertar = "INSERT INTO DbLogin ([NOMBRE], [PASSWORD]) VALUES (?, ?)";
+            string queryVerificar = "SELECT COUNT(*) FROM Usuarios WHERE Username = ?";
+            // String queryInsertar = "INSERT INTO DbLogin (NOMBRE,PASSWORD) VALUES (?,?)";
+            string queryInsertar = "INSERT INTO Usuarios ([Username], [Contraseña],[Rol]) VALUES (?, ?,1)";
 
             try
             {
