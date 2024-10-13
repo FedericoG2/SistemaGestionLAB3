@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace SistemaGestionLAB3.Controlador
 {
@@ -124,6 +125,34 @@ namespace SistemaGestionLAB3.Controlador
                 MessageBox.Show("Error al registrar usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return resultado;
+        }
+
+        //Metodo para traer todos los usuarios y cargarlo en una grilla
+        public void CargarUsuariosEnGrid(DataGridView dgv)
+        {
+            try
+            {
+                using (OleDbConnection conexion = new OleDbConnection(ruta))
+                {
+                    conexion.Open();
+                    string query = "SELECT U.Id_Usuario AS ID,U.Nombre,U.Username,U.Contraseña,U.Mail,U.Firma, R.Rol AS Rol FROM Usuarios U INNER JOIN Roles R ON U.IdRoles = R.Id";
+
+                    OleDbDataAdapter adapter = new OleDbDataAdapter(query, conexion);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    dgv.DataSource = dt;  // Cargar los datos en el DataGridView
+                    dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+            }
+            catch(OleDbException oleDbEx) 
+            {
+                MessageBox.Show("Error de base de datos: " + oleDbEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar datos en el DataGridView!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

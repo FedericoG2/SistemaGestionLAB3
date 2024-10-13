@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaGestionLAB3.Vista
 {
-    public partial class frmInventario : Form
+    public partial class FrmInventario : Form
     {
-        public frmInventario()
+        public FrmInventario()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
