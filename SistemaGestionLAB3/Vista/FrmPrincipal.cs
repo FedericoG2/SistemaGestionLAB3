@@ -17,6 +17,7 @@ namespace SistemaGestionLAB3
         public FrmPrincipal()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             //Propiedad para expandir a lo ancho de la pantalla el group box que contiene botones 
             this.Resize += new EventHandler(Form1_Resize);
@@ -56,6 +57,11 @@ namespace SistemaGestionLAB3
         {
             frmInventario formInventario = new frmInventario();
             formInventario.Show();
+        }
+
+        private void btnUusuarios_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

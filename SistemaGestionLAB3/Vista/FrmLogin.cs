@@ -17,60 +17,50 @@ namespace SistemaGestionLAB3
         public FrmLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-            private void btnIngresar_Click(object sender, EventArgs e)
-            {
-                if (txtContraseña.Text == "" || txtNombreUsuario.Text == "")
-                {
-                    MessageBox.Show("Ingrese Datos Necesarios"); 
-                }else
-                {
-                    // Crear el formulario de carga
-                    FrmInicio inicioForm = new FrmInicio();
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+        if (txtContraseña.Text == "" || txtNombreUsuario.Text == "")
+        {
+            MessageBox.Show("Ingrese Datos Necesarios"); 
+        }
+        else
+        {
+           string nombreUsuario = txtNombreUsuario.Text;
+           string passUsuario = txtContraseña.Text;
+
+           //// instanciamos la clase
+           DbLogin dbLogin = new DbLogin();
+           if (dbLogin.VerificarUsuario(nombreUsuario, passUsuario))
+           {
+                MessageBox.Show("Ingreso exitoso!", "Bienvenido!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Crear el formulario de carga
+                FrmInicio inicioForm = new FrmInicio();
 
                 // Mostrar el formulario de carga de manera no modal
                 inicioForm.Show();
-
-                // Cerrar el formulario actual (Login)
-                this.Hide();
-
-                    //string nombreUsuario = txtNombreUsuario.Text;
-                    //string passUsuario = txtContraseña.Text;
-
-                    //// instanciamos la clase
-                    //DbLogin dbLogin = new DbLogin();
-                    //if (dbLogin.VerificarUsuario(nombreUsuario, passUsuario))
-                    //{
-                    //    MessageBox.Show("Ingreso exitoso!", "Bienvenido!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Usuario o contraseña incorrecto!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //}
-                }
-            }
+           }
+           else
+           {
+                MessageBox.Show("Usuario o contraseña incorrecto!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           }
+          }
+        }
 
         private void linkOlvideContraseña_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Hide();
             FrmOlvideContraseña frmOlvideContraseña = new FrmOlvideContraseña();
             frmOlvideContraseña.ShowDialog();
         }
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-
-            // Crear el formulario de carga
-            FrmInicio inicioForm = new FrmInicio();
-
-            // Mostrar el formulario de carga de manera no modal
-            inicioForm.Show();
-
-            // Cerrar el formulario actual (Login)
-            this.Hide();
-
-            //FrmRegistrarse frmRegistrarse = new FrmRegistrarse();
-            //frmRegistrarse.ShowDialog();
+            //Muestra el formulario de registro
+            FrmRegistrarse frmRegistrarse = new FrmRegistrarse();
+            frmRegistrarse.ShowDialog();
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)

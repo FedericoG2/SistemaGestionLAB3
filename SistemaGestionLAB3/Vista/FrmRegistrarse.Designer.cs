@@ -48,7 +48,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(288, 236);
+            this.groupBox1.Size = new System.Drawing.Size(283, 188);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inicio de Sesión";
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 264);
+            this.ClientSize = new System.Drawing.Size(307, 216);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmRegistrarse";
             this.Text = "FrmRegistrarse";

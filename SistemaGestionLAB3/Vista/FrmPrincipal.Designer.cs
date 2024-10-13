@@ -100,6 +100,7 @@
             this.btnUusuarios.Text = "Usuarios";
             this.btnUusuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUusuarios.UseVisualStyleBackColor = false;
+            this.btnUusuarios.Click += new System.EventHandler(this.btnUusuarios_Click);
             // 
             // btnVentas
             // 
