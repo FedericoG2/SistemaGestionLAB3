@@ -15,7 +15,7 @@ namespace SistemaGestionLAB3.Controlador
         // Ruta
         private string ruta = @"Provider =Microsoft.ACE.OLEDB.12.0;Data Source=ModeloDB\Inventario_db.accdb";
 
-        public String Rol(int RolId)
+        public String RolPorId(int RolId)
         {
             String nombre = "";
 
@@ -32,7 +32,11 @@ namespace SistemaGestionLAB3.Controlador
                         {
                             if (lector.Read())
                             {
-                                nombre = lector["NombreRol"].ToString();    
+                                nombre = lector["NombreRol"].ToString();
+                            }
+                            else
+                            {
+                                nombre = "Rol no encontrado"; // Mensaje por defecto si no se encuentra
                             }
                         }
                     }
@@ -45,6 +49,38 @@ namespace SistemaGestionLAB3.Controlador
             return nombre;
         }
 
+        //Metodo para obtener todos los roles y guardarlos en una lista con dos campos, Id y Rol
+        public List<(int Id, string NombreRol)> ObtenerTodosLosRoles()
+        {
+            List<(int Id, string NombreRol)> roles = new List<(int Id, string NombreRol)>();
 
+            try
+            {
+                using (OleDbConnection conexion = new OleDbConnection(ruta))
+                {
+                    conexion.Open();
+                    string query = "SELECT Id, Rol FROM Roles";
+
+                    using (OleDbCommand comando = new OleDbCommand(query, conexion))
+                    {
+                        using (OleDbDataReader lector = comando.ExecuteReader())
+                        {
+                            while (lector.Read())
+                            {
+                                int id = Convert.ToInt32(lector["Id"]);
+                                string nombreRol = lector["Rol"].ToString();
+                                roles.Add((id, nombreRol));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener roles: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return roles;
+        }
     }
+
 }

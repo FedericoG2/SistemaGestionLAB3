@@ -30,6 +30,7 @@
         {
             this.btnVolver = new System.Windows.Forms.Button();
             this.DgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,23 +40,41 @@
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(115, 61);
             this.btnVolver.TabIndex = 0;
-            this.btnVolver.Text = "Volver";
+            this.btnVolver.Text = "Volver al menu";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // DgvUsuarios
             // 
+            this.DgvUsuarios.AllowUserToAddRows = false;
+            this.DgvUsuarios.AllowUserToDeleteRows = false;
             this.DgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvUsuarios.Location = new System.Drawing.Point(147, 12);
+            this.DgvUsuarios.MultiSelect = false;
             this.DgvUsuarios.Name = "DgvUsuarios";
+            this.DgvUsuarios.ReadOnly = true;
+            this.DgvUsuarios.RowHeadersVisible = false;
+            this.DgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvUsuarios.Size = new System.Drawing.Size(810, 312);
             this.DgvUsuarios.TabIndex = 1;
+            this.DgvUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUsuarios_CellDoubleClick);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(12, 12);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(115, 61);
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.Text = "Editar un usuario";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 343);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.DgvUsuarios);
             this.Controls.Add(this.btnVolver);
             this.Name = "FrmUsuarios";
@@ -70,5 +89,6 @@
 
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.DataGridView DgvUsuarios;
+        private System.Windows.Forms.Button btnEditar;
     }
 }
