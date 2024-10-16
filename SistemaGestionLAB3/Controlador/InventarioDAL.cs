@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
@@ -92,6 +93,40 @@ namespace SistemaGestionLAB3.Controlador
             catch (Exception e)
             {
                 MessageBox.Show("ERROR EN BD " + e.ToString());
+            }
+        }
+
+        public void Agregar(clsStock stock)
+        {
+            try
+            {
+                conexiones();
+
+                //Se edita lp que es la query 
+                string query = "INSERT INTO Inventario (Id_Producto, Nombre, Precio_Venta, Stock, Id_Proveedor) VALUES (@IdProdc, @Nombre, @Precio, @Stock, @IdProveed)";
+
+                comando.CommandText = query;
+                // Asignar valores a los parámetros
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@IdProdc", stock.Id);
+                comando.Parameters.AddWithValue("@Nombre", stock.Nombre);
+                comando.Parameters.AddWithValue("@Precio", stock.Precio);
+                comando.Parameters.AddWithValue("@Stock", stock.Stock);
+                comando.Parameters.AddWithValue("@IdProveed", stock.Id_Proveedor);
+
+                // Ejecuta el comando (INSERT INTO) para insertar los datos en la base de datos
+                comando.ExecuteNonQuery();
+
+                MessageBox.Show("Producto agregado correctamente.");
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ERROR EN BD " + e.ToString());
+            }
+            finally
+            {
+                conexion.Close();
             }
         }
 
