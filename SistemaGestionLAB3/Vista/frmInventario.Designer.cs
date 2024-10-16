@@ -30,18 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInventario));
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.cmbRubro = new System.Windows.Forms.ComboBox();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cantidad = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.fechaAlta = new System.Windows.Forms.DateTimePicker();
-            this.fechaVencimiento = new System.Windows.Forms.DateTimePicker();
+            this.label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -53,6 +48,9 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.accionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmbProveedor = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -67,30 +65,23 @@
             this.txtCodigo.Size = new System.Drawing.Size(121, 20);
             this.txtCodigo.TabIndex = 0;
             // 
-            // txtMarca
+            // txtCantidad
             // 
-            this.txtMarca.Location = new System.Drawing.Point(175, 32);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(157, 20);
-            this.txtMarca.TabIndex = 1;
+            this.txtCantidad.Location = new System.Drawing.Point(397, 32);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(157, 20);
+            this.txtCantidad.TabIndex = 1;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(386, 32);
+            this.txtDescripcion.Location = new System.Drawing.Point(169, 32);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(196, 20);
             this.txtDescripcion.TabIndex = 2;
             // 
-            // cmbRubro
-            // 
-            this.cmbRubro.FormattingEnabled = true;
-            this.cmbRubro.Location = new System.Drawing.Point(433, 30);
-            this.cmbRubro.Name = "cmbRubro";
-            this.cmbRubro.Size = new System.Drawing.Size(154, 21);
-            this.cmbRubro.TabIndex = 5;
-            // 
             // dgvInventario
             // 
+            this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Location = new System.Drawing.Point(32, 178);
             this.dgvInventario.Name = "dgvInventario";
@@ -106,72 +97,40 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Codigo";
             // 
-            // label2
+            // cantidad
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(172, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Marca";
+            this.cantidad.AutoSize = true;
+            this.cantidad.Location = new System.Drawing.Point(394, 16);
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Size = new System.Drawing.Size(52, 13);
+            this.cantidad.TabIndex = 10;
+            this.cantidad.Text = "Cantidad ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(383, 16);
+            this.label3.Location = new System.Drawing.Point(166, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Descripcion";
             // 
-            // label4
+            // label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Fecha de Alta ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(430, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Rubro";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(209, 14);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Fecha de vencimiento";
-            // 
-            // fechaAlta
-            // 
-            this.fechaAlta.Location = new System.Drawing.Point(6, 32);
-            this.fechaAlta.Name = "fechaAlta";
-            this.fechaAlta.Size = new System.Drawing.Size(193, 20);
-            this.fechaAlta.TabIndex = 16;
-            // 
-            // fechaVencimiento
-            // 
-            this.fechaVencimiento.Location = new System.Drawing.Point(215, 30);
-            this.fechaVencimiento.Name = "fechaVencimiento";
-            this.fechaVencimiento.Size = new System.Drawing.Size(195, 20);
-            this.fechaVencimiento.TabIndex = 17;
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(70, 13);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(56, 13);
+            this.label.TabIndex = 12;
+            this.label.Text = "Proveedor";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtMarca);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtCantidad);
+            this.groupBox1.Controls.Add(this.cantidad);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(32, 27);
@@ -184,16 +143,14 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.fechaAlta);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.fechaVencimiento);
-            this.groupBox2.Controls.Add(this.cmbRubro);
-            this.groupBox2.Location = new System.Drawing.Point(32, 106);
+            this.groupBox2.Controls.Add(this.txtPrecio);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label);
+            this.groupBox2.Controls.Add(this.cmbProveedor);
+            this.groupBox2.Location = new System.Drawing.Point(106, 106);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.groupBox2.Size = new System.Drawing.Size(625, 66);
+            this.groupBox2.Size = new System.Drawing.Size(448, 66);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             // 
@@ -293,8 +250,33 @@
             // 
             this.salirToolStripMenuItem.Image = global::SistemaGestionLAB3.Properties.Resources.icoSalir;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            // 
+            // cmbProveedor
+            // 
+            this.cmbProveedor.FormattingEnabled = true;
+            this.cmbProveedor.Location = new System.Drawing.Point(48, 29);
+            this.cmbProveedor.Name = "cmbProveedor";
+            this.cmbProveedor.Size = new System.Drawing.Size(121, 21);
+            this.cmbProveedor.TabIndex = 29;
+            this.cmbProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbProveedor_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(323, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Precio";
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(295, 29);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecio.TabIndex = 31;
             // 
             // frmInventario
             // 
@@ -327,18 +309,13 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.ComboBox cmbRubro;
         private System.Windows.Forms.DataGridView dgvInventario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label cantidad;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker fechaAlta;
-        private System.Windows.Forms.DateTimePicker fechaVencimiento;
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnAgregar;
@@ -350,5 +327,8 @@
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem accionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbProveedor;
     }
 }
