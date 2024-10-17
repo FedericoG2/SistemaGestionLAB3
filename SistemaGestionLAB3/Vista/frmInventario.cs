@@ -65,12 +65,54 @@ namespace SistemaGestionLAB3.Vista
             objProductos.Listar(dgvInventario);
 
 
-
-            // limpiar();  
+            LlenarGrilla();
+            LimpiarCampos();  
         }
-
+        private void LimpiarCampos()
+        {
+            txtCodigo.Clear();
+            txtDescripcion.Clear();
+            txtPrecio.Clear();
+            txtCantidad.Clear();
+            cmbProveedor.SelectedIndex = -1; // Restablecer el combo
+        }
         private void cmbProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+        private clsStock eliminarDatos()
+        {
+            clsStock stockNuevo = new clsStock();
+
+            if (int.TryParse(txtCodigo.Text, out int codigoStock))
+            {
+                stockNuevo.Id = codigoStock; // Solo asignar si la conversión fue exitosa
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingresa un código de producto válido.");
+                return null; // Retornar null si la entrada no es válida
+            }
+
+            return stockNuevo;
+
+
+
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            
+            InventarioDAL produc = new InventarioDAL();
+            produc.Eliminar(eliminarDatos());
+
+            txtCodigo.Clear();
+            LlenarGrilla();
 
         }
     }

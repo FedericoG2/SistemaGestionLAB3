@@ -18,23 +18,32 @@ namespace SistemaGestionLAB3.Controlador
         private OleDbCommand comando = new OleDbCommand();
         //nos sirve para adaptar los datos que estan mal en la bd   
         private OleDbDataAdapter adaptador = new OleDbDataAdapter();
-        private string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.16.0;Data Source=ModeloDB\Inventario_db.accdb";
-
-
+        //private string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.16.0;Data Source=ModeloDB\Inventario_db.accdb";
+        private string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\\Users\\Usuario\\Desktop\\LAB\\Lab3\\SistemaGestionLAB3\\ModeloDB\\Inventario_db.accdb";
+                                          
         private string Tabla = "Inventario";
 
         //Conexion y Prueba de conexion 
         public void conexiones()
         {
-            //recibe la cadena de conexion
-            conexion.ConnectionString = cadenaConexion;
-            conexion.Open();
+            try
+            {
+                // Establece la cadena de conexión
+                conexion.ConnectionString = cadenaConexion;
+                conexion.Open(); // Intenta abrir la conexión
 
-            // Asocia el comando SQL a la conexión y define el tipo de comando (SQL)
-            comando.Connection = conexion;
-            comando.CommandType = CommandType.Text;
+                // Asocia el comando SQL a la conexión y define el tipo de comando (SQL)
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
 
+                MessageBox.Show("Conexión abierta correctamente."); // Mensaje de éxito
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir la conexión: " + ex.Message); // Muestra el error si ocurre
+            }
         }
+
         public void ProbarConexion()
         {
             try
@@ -100,25 +109,47 @@ namespace SistemaGestionLAB3.Controlador
         {
             try
             {
-                conexiones();
-
-                //Se edita lp que es la query 
-                string query = "INSERT INTO Inventario (Id_Producto, Nombre, Precio_Venta, Stock, Id_Proveedor) VALUES (@IdProdc, @Nombre, @Precio, @Stock, @IdProveed)";
+                conexiones(); // Asegúrate de que la conexión se abre correctamente.
+                string query = "INSERT INTO Inventario ( Nombre, Precio_Venta, Stock, Id_Proveedor) VALUES ( @Nombre, @Precio, @Stock, @IdProveed);";
 
                 comando.CommandText = query;
+
                 // Asignar valores a los parámetros
                 comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@IdProdc", stock.Id);
+                
                 comando.Parameters.AddWithValue("@Nombre", stock.Nombre);
                 comando.Parameters.AddWithValue("@Precio", stock.Precio);
                 comando.Parameters.AddWithValue("@Stock", stock.Stock);
                 comando.Parameters.AddWithValue("@IdProveed", stock.Id_Proveedor);
 
-                // Ejecuta el comando (INSERT INTO) para insertar los datos en la base de datos
-                comando.ExecuteNonQuery();
-
+                comando.ExecuteNonQuery(); // Asegúrate de que esta línea se ejecute.
                 MessageBox.Show("Producto agregado correctamente.");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ERROR EN BD: " + e.Message); // Verifica el mensaje de error.
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close(); // Asegúrate de cerrar la conexión.
+                }
+            }
+        }
+        public void Eliminar(clsStock stock)
+        {
+            try
+            {
+                conexiones(); // Método para abrir la conexión con la base de datos
+                comando.CommandText = "DELETE FROM Inventario WHERE Id_Producto = ?";
 
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("?", stock.Id); // Pasar el parámetro del código del producto
+
+                comando.ExecuteNonQuery(); // Ejecutar el comando
+
+                MessageBox.Show("Producto eliminado correctamente.");
             }
             catch (Exception e)
             {
@@ -126,11 +157,11 @@ namespace SistemaGestionLAB3.Controlador
             }
             finally
             {
-                conexion.Close();
+                conexion.Close(); // Asegúrate de cerrar la conexión después de ejecutar el comando
             }
         }
 
-
-
     }
+
 }
+
