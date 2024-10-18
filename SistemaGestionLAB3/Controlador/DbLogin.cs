@@ -26,7 +26,7 @@ namespace SistemaGestionLAB3.Controlador
                 using (OleDbConnection conexion = new OleDbConnection(ruta))
                 {
                     conexion.Open();
-                    //abrimos
+                    //abrimos de nuevo
                     string queryVerificar = "SELECT COUNT(*) FROM Usuarios WHERE Username = ? AND Contraseña = ?";
                     using (OleDbCommand comando = new OleDbCommand(queryVerificar, conexion))
                     {
