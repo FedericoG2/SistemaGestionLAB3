@@ -35,6 +35,7 @@ namespace SistemaGestionLAB3.Vista
         }
         public void LlenarGrilla()
         {
+
             InventarioDAL objProductos = new InventarioDAL();
             objProductos.Listar(dgvInventario);
         }
