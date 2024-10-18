@@ -87,6 +87,7 @@
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.Size = new System.Drawing.Size(625, 250);
             this.dgvInventario.TabIndex = 8;
+            this.dgvInventario.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.seleccionar);
             // 
             // label1
             // 
@@ -277,7 +278,7 @@
             // 
             this.salirToolStripMenuItem.Image = global::SistemaGestionLAB3.Properties.Resources.icoSalir;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // frmInventario

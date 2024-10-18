@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\archivInventario.cs" />
     <Compile Include="Controlador\clsStock.cs" />
     <Compile Include="Controlador\DbLogin.cs" />
     <Compile Include="Controlador\InventarioDAL.cs" />
@@ -134,6 +135,8 @@
     <EmbeddedResource Include="Vista\FrmRegistrarse.resx">
       <DependentUpon>FrmRegistrarse.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="PresupuestoT\Presupuesto venta sistm.docx" />
+    <None Include="PresupuestoT\Presupuesto_Sistema_Lab3.xlsx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

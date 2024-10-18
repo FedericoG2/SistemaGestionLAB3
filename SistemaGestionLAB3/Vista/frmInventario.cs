@@ -1,4 +1,5 @@
 ﻿using SistemaGestionLAB3.Controlador;
+using SistemaGestionLAB3.SistemaGestionLAB3.Controlador;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace SistemaGestionLAB3.Vista
         public frmInventario()
         {
             InitializeComponent();
-            LlenarGrilla();
+            LlenardgvInventario();
 
             cmbProveedor.Items.Clear();
             cmbProveedor.Items.Add("MagicCloth");
@@ -32,7 +33,7 @@ namespace SistemaGestionLAB3.Vista
         {
             Close();
         }
-        public void LlenarGrilla()
+        public void LlenardgvInventario()
         {
             InventarioDAL objProductos = new InventarioDAL();
             objProductos.Listar(dgvInventario);
@@ -61,29 +62,61 @@ namespace SistemaGestionLAB3.Vista
             clsStock nuevoStock = guardarDatos(); // Guarda el nuevo stock
             objProductos.Agregar(nuevoStock); // Agrega el nuevo producto a la base de datos
 
-            // Actualiza la grilla
+            // Actualiza la dgvInventario
             objProductos.Listar(dgvInventario);
 
 
-            LlenarGrilla();
+            LlenardgvInventario();
             LimpiarCampos();  
         }
-        private void LimpiarCampos()
-        {
-            txtCodigo.Clear();
-            txtDescripcion.Clear();
-            txtPrecio.Clear();
-            txtCantidad.Clear();
-            cmbProveedor.SelectedIndex = -1; // Restablecer el combo
-        }
+     
         private void cmbProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+        private void seleccionar(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int indice1 = e.RowIndex;
+            dgvInventario.ClearSelection();
+
+            if (indice1 >= 0)
+            {
+                dgvInventario.Rows[indice1].Selected = true;
+
+                
+                txtCodigo.Text = dgvInventario.Rows[indice1].Cells[0].Value?.ToString() ?? string.Empty;
+                txtDescripcion.Text = dgvInventario.Rows[indice1].Cells[1].Value?.ToString() ?? string.Empty;
+                txtCantidad.Text = dgvInventario.Rows[indice1].Cells[2].Value?.ToString() ?? string.Empty;
+                txtPrecio.Text = dgvInventario.Rows[indice1].Cells[3].Value?.ToString() ?? string.Empty;
+
+                int proveedorIndex = (int)dgvInventario.Rows[indice1].Cells[4].Value - 1;
+
+                
+                if (proveedorIndex >= 0 && proveedorIndex < cmbProveedor.Items.Count)
+                {
+                    
+                    cmbProveedor.Text = cmbProveedor.Items[proveedorIndex].ToString();
+                }
+                else
+                {
+                    
+                    cmbProveedor.Text = string.Empty; 
+                }
+            }
+
+            btnModificar.Enabled = true;
+        }
+
+
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            InventarioDAL objProductos = new InventarioDAL();
+            objProductos.Modificar(guardarDatos());
 
+
+            LimpiarCampos();
+            LlenardgvInventario();
         }
         private clsStock eliminarDatos()
         {
@@ -95,8 +128,8 @@ namespace SistemaGestionLAB3.Vista
             }
             else
             {
-                MessageBox.Show("Por favor, ingresa un código de producto válido.");
-                return null; // Retornar null si la entrada no es válida
+                MessageBox.Show("ingresa un código  válido.");
+                return null; 
             }
 
             return stockNuevo;
@@ -112,8 +145,33 @@ namespace SistemaGestionLAB3.Vista
             produc.Eliminar(eliminarDatos());
 
             txtCodigo.Clear();
-            LlenarGrilla();
+            LlenardgvInventario();
+            LimpiarCampos();
 
         }
+        private void LimpiarCampos()
+        {
+            txtCodigo.Clear();
+            txtDescripcion.Clear();
+            txtPrecio.Clear();
+            txtCantidad.Clear();
+            cmbProveedor.SelectedIndex = -1; // Restablecer el combo
+        }
+       
+
+        //private void btnExportar_Click_1(object sender, EventArgs e)
+        //{
+
+        //    string proveedor = cmbProveedor.Text;
+        //    int Codigo = Convert.ToInt32(txtCodigo.Text);
+        //    int  Stock = Convert.ToInt32(txtCantidad.Text);
+        //    int precio = Convert.ToInt32(txtPrecio.Text);
+        //    //Enviar los datos escritos en la agenada para exportar
+        //    archivInventario.Grabar(Codigo, txtDescripcion.Text,
+        //    Stock,proveedor , precio );
+        //    MessageBox.Show("Datos listos para exportar");
+
+        //    LimpiarCampos();
+        //}
     }
 }

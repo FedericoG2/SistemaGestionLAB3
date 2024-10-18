@@ -18,9 +18,12 @@ namespace SistemaGestionLAB3.Controlador
         private OleDbCommand comando = new OleDbCommand();
         //nos sirve para adaptar los datos que estan mal en la bd   
         private OleDbDataAdapter adaptador = new OleDbDataAdapter();
+        
         //private string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.16.0;Data Source=ModeloDB\Inventario_db.accdb";
-        private string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\\Users\\Usuario\\Desktop\\LAB\\Lab3\\SistemaGestionLAB3\\ModeloDB\\Inventario_db.accdb";
-                                          
+        // private string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\\Users\\Usuario\\Desktop\\LAB\\Lab3\\SistemaGestionLAB3\\ModeloDB\\Inventario_db.accdb";
+        private string cadenaConexion = @"Provider =Microsoft.ACE.OLEDB.12.0;Data Source=ModeloDB\Inventario_db.accdb";
+       
+        
         private string Tabla = "Inventario";
 
         //Conexion y Prueba de conexion 
@@ -84,8 +87,6 @@ namespace SistemaGestionLAB3.Controlador
                 //nombre de la tabla que vamos a traer 
                 comando.CommandText = Tabla;
 
-
-
                 //adaptamos el comando configurado
                 adaptador = new OleDbDataAdapter(comando);
                 //objeto de clase dataset para poder cargar los datos 
@@ -109,12 +110,12 @@ namespace SistemaGestionLAB3.Controlador
         {
             try
             {
-                conexiones(); // Asegúrate de que la conexión se abre correctamente.
+                conexiones(); 
                 string query = "INSERT INTO Inventario ( Nombre, Precio_Venta, Stock, Id_Proveedor) VALUES ( @Nombre, @Precio, @Stock, @IdProveed);";
 
                 comando.CommandText = query;
 
-                // Asignar valores a los parámetros
+                
                 comando.Parameters.Clear();
                 
                 comando.Parameters.AddWithValue("@Nombre", stock.Nombre);
@@ -122,12 +123,12 @@ namespace SistemaGestionLAB3.Controlador
                 comando.Parameters.AddWithValue("@Stock", stock.Stock);
                 comando.Parameters.AddWithValue("@IdProveed", stock.Id_Proveedor);
 
-                comando.ExecuteNonQuery(); // Asegúrate de que esta línea se ejecute.
+                comando.ExecuteNonQuery();
                 MessageBox.Show("Producto agregado correctamente.");
             }
             catch (Exception e)
             {
-                MessageBox.Show("ERROR EN BD: " + e.Message); // Verifica el mensaje de error.
+                MessageBox.Show("ERROR EN BD: " + e.Message); 
             }
             finally
             {
@@ -141,13 +142,13 @@ namespace SistemaGestionLAB3.Controlador
         {
             try
             {
-                conexiones(); // Método para abrir la conexión con la base de datos
+                conexiones(); 
                 comando.CommandText = "DELETE FROM Inventario WHERE Id_Producto = ?";
-
+                                     
                 comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("?", stock.Id); // Pasar el parámetro del código del producto
+                comando.Parameters.AddWithValue("?", stock.Id); 
 
-                comando.ExecuteNonQuery(); // Ejecutar el comando
+                comando.ExecuteNonQuery(); 
 
                 MessageBox.Show("Producto eliminado correctamente.");
             }
@@ -160,6 +161,44 @@ namespace SistemaGestionLAB3.Controlador
                 conexion.Close(); // Asegúrate de cerrar la conexión después de ejecutar el comando
             }
         }
+        public void Modificar(clsStock stock)
+        {
+            try
+            {
+                conexiones(); // Abre la conexión
+
+                // Consulta SQL para modificar los valores
+                comando.CommandText = "UPDATE Inventario SET Nombre = ?, Precio_Venta = ?, Stock = ?, Id_Proveedor = ? WHERE Id_Producto = ?";
+
+                // Limpia los parámetros del comando antes de agregar nuevos
+                comando.Parameters.Clear();
+
+                // Asigna los valores a los parámetros en el mismo orden de la consulta
+                comando.Parameters.AddWithValue("?", stock.Nombre);
+                comando.Parameters.AddWithValue("?", stock.Precio);
+                comando.Parameters.AddWithValue("?", stock.Stock);
+                comando.Parameters.AddWithValue("?", stock.Id_Proveedor - 1);
+                comando.Parameters.AddWithValue("?", stock.Id); // Código del producto a modificar (Id_Producto)
+
+                // Ejecuta el comando (Update) para modificar los datos en la base de datos
+                comando.ExecuteNonQuery();
+
+                MessageBox.Show("Modificado correctamente");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ERROR EN BD " + e.ToString());
+            }
+            finally
+            {
+                // Cierra la conexión para evitar fugas de recursos
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
 
     }
 
