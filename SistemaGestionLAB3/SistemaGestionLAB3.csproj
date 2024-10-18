@@ -66,19 +66,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\clsStock.cs" />
     <Compile Include="Controlador\DbLogin.cs" />
     <Compile Include="Controlador\DbRol.cs" />
+    <Compile Include="Controlador\InventarioDAL.cs" />
     <Compile Include="Vista\FrmEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\FrmEditarUsuario.Designer.cs">
       <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\frmInventario.cs">
+    <Compile Include="Vista\FrmInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\frmInventario.Designer.cs">
-      <DependentUpon>frmInventario.cs</DependentUpon>
+    <Compile Include="Vista\FrmInventario.Designer.cs">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -127,8 +129,8 @@
     <EmbeddedResource Include="Vista\FrmEditarUsuario.resx">
       <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\frmInventario.resx">
-      <DependentUpon>frmInventario.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\FrmInventario.resx">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
