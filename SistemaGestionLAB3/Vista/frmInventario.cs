@@ -20,7 +20,7 @@ namespace SistemaGestionLAB3.Vista
         public frmInventario()
         {
             InitializeComponent();
-            LlenardgvInventario();
+            LlenarGrilla();
 
             cmbProveedor.Items.Clear();
             cmbProveedor.Items.Add("MagicCloth");
@@ -33,7 +33,7 @@ namespace SistemaGestionLAB3.Vista
         {
             Close();
         }
-        public void LlenardgvInventario()
+        public void LlenarGrilla()
         {
             InventarioDAL objProductos = new InventarioDAL();
             objProductos.Listar(dgvInventario);
@@ -66,7 +66,7 @@ namespace SistemaGestionLAB3.Vista
             objProductos.Listar(dgvInventario);
 
 
-            LlenardgvInventario();
+            LlenarGrilla();
             LimpiarCampos();  
         }
      
@@ -116,7 +116,7 @@ namespace SistemaGestionLAB3.Vista
 
 
             LimpiarCampos();
-            LlenardgvInventario();
+            LlenarGrilla();
         }
         private clsStock eliminarDatos()
         {
@@ -145,7 +145,7 @@ namespace SistemaGestionLAB3.Vista
             produc.Eliminar(eliminarDatos());
 
             txtCodigo.Clear();
-            LlenardgvInventario();
+            LlenarGrilla();
             LimpiarCampos();
 
         }
