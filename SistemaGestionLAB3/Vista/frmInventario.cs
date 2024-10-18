@@ -68,6 +68,7 @@ namespace SistemaGestionLAB3.Vista
 
             LlenarGrilla();
             LimpiarCampos();  
+
         }
      
         private void cmbProveedor_SelectedIndexChanged(object sender, EventArgs e)
