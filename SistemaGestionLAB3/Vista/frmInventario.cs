@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace SistemaGestionLAB3.Vista
 {
-    public partial class frmInventario : Form
+    public partial class FrmInventario : Form
     {
         clsStock StockNuevo; 
         
@@ -38,6 +38,8 @@ namespace SistemaGestionLAB3.Vista
 
             InventarioDAL objProductos = new InventarioDAL();
             objProductos.Listar(dgvInventario);
+
+
         }
         private clsStock guardarDatos()
         {
