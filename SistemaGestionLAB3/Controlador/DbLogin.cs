@@ -26,11 +26,12 @@ namespace SistemaGestionLAB3.Controlador
                 using (OleDbConnection conexion = new OleDbConnection(ruta))
                 {
                     conexion.Open();
+                    //abrimos de nuevo
                     string queryVerificar = "SELECT COUNT(*) FROM Usuarios WHERE Username = ? AND Contraseña = ?";
                     using (OleDbCommand comando = new OleDbCommand(queryVerificar, conexion))
                     {
-                        comando.Parameters.AddWithValue("@NOMBRE", nombre);
-                        comando.Parameters.AddWithValue("@PASSWORD", password);
+                        comando.Parameters.AddWithValue("@Username", nombre);
+                        comando.Parameters.AddWithValue("@Contraseña", password);
 
                         // Agregamos un valor como contador
                         int count = (int)comando.ExecuteScalar();
@@ -77,13 +78,13 @@ namespace SistemaGestionLAB3.Controlador
         }
 
         // Metodo para registrarse
-        public bool RegistrarUsuario(string nombre, string password)
+        public bool RegistrarUsuario(string nombre, string password, byte[] firma)
         {
             bool resultado = false;
             // Primero, verificar si el usuario ya existe
             string queryVerificar = "SELECT COUNT(*) FROM Usuarios WHERE Username = ?";
             // String queryInsertar
-            string queryInsertar = "INSERT INTO Usuarios ([Username], [Contraseña],[IdRoles]) VALUES (?, ?,1)";
+            string queryInsertar = "INSERT INTO Usuarios ([Username], [Contraseña],[IdRoles],[Firma]) VALUES (?, ?, 1, ?)";
 
             try
             {
@@ -109,6 +110,7 @@ namespace SistemaGestionLAB3.Controlador
                     {
                         comandoInsertar.Parameters.AddWithValue("?", nombre);
                         comandoInsertar.Parameters.AddWithValue("?", password);
+                        comandoInsertar.Parameters.AddWithValue("?", firma);
 
                         int filasAfectadas = comandoInsertar.ExecuteNonQuery();
                         resultado = filasAfectadas > 0;
