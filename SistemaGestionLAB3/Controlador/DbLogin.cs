@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
+using System.Security.Cryptography;
+using System.Reflection;
 
 namespace SistemaGestionLAB3.Controlador
 {
@@ -80,8 +82,8 @@ namespace SistemaGestionLAB3.Controlador
             bool resultado = false;
             // Primero, verificar si el usuario ya existe
             string queryVerificar = "SELECT COUNT(*) FROM Usuarios WHERE Username = ?";
-            // String queryInsertar = "INSERT INTO DbLogin (NOMBRE,PASSWORD) VALUES (?,?)";
-            string queryInsertar = "INSERT INTO Usuarios ([Username], [Contraseña],[Rol]) VALUES (?, ?,1)";
+            // String queryInsertar
+            string queryInsertar = "INSERT INTO Usuarios ([Username], [Contraseña],[IdRoles]) VALUES (?, ?,1)";
 
             try
             {
@@ -125,5 +127,137 @@ namespace SistemaGestionLAB3.Controlador
             }
             return resultado;
         }
+
+        //Metodo para traer todos los usuarios y cargarlo en una grilla
+        public void CargarUsuariosEnGrid(DataGridView dgv)
+        {
+            try
+            {
+                using (OleDbConnection conexion = new OleDbConnection(ruta))
+                {
+                    conexion.Open();
+                    string query = "SELECT U.Id_Usuario AS ID,U.Nombre,U.Username,U.Contraseña,U.Mail, R.Rol AS Rol FROM Usuarios U INNER JOIN Roles R ON U.IdRoles = R.Id";
+
+                    OleDbDataAdapter adapter = new OleDbDataAdapter(query, conexion);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    dgv.DataSource = dt;  // Cargar los datos en el DataGridView
+                    dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+            }
+            catch(OleDbException oleDbEx) 
+            {
+                MessageBox.Show("Error de base de datos: " + oleDbEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar datos en el DataGridView!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Metodo para la Busqueda los datos de un usuario y los carga en el formulario de editar Usuario
+        public void DatosUsuario(int id, TextBox txtNombre,TextBox txtUsername, TextBox txtContraseña,TextBox txtMail, ComboBox cmbRol)
+        {
+            try
+            {
+                using (OleDbConnection conexion = new OleDbConnection(ruta))
+                {
+                    conexion.Open();
+                    string query = "SELECT U.Id_Usuario AS ID, U.Nombre, U.Username, U.Contraseña, U.Mail, R.Id AS RolId FROM Usuarios U INNER JOIN Roles R ON U.IdRoles = R.Id WHERE U.Id_Usuario = ?";
+                    
+                    using (OleDbCommand comandoTraer = new OleDbCommand(query, conexion))
+                    {
+                        comandoTraer.Parameters.AddWithValue("?", id);
+                        using (OleDbDataReader lector = comandoTraer.ExecuteReader())
+                        {
+                            // Verificar si hay datos
+                            if (lector.Read())
+                            {
+                                // Asignar los valores al formulario
+                                txtNombre.Text = lector["Nombre"].ToString();
+                                txtContraseña.Text = lector["Contraseña"].ToString();
+                                txtMail.Text = lector["Mail"].ToString();
+                                txtUsername.Text = lector["Username"].ToString();
+                                cmbRol.SelectedValue = Convert.ToUInt32(lector["RolId"]);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontró el usuario.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar datos!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Metodo para la actualizacion de Usuarios
+        public void ModificarUsuario(int id, string Nombre, string Username, string Mail, string Contraseña, string RolId)
+        {
+            try
+            {
+                using (OleDbConnection conexion = new OleDbConnection(ruta))
+                {
+                    conexion.Open();
+                    string query = "UPDATE Usuarios SET Nombre = ?, Username = ?, Contraseña = ?, Mail = ?, IdRoles = ? WHERE Id_Usuario = ?";
+
+                    using (OleDbCommand comandoModificar = new OleDbCommand(query, conexion))
+                    {
+                        comandoModificar.Parameters.AddWithValue("?", Nombre);
+                        comandoModificar.Parameters.AddWithValue("?", Username);
+                        comandoModificar.Parameters.AddWithValue("?", Contraseña);
+                        comandoModificar.Parameters.AddWithValue("?", Mail);
+                        comandoModificar.Parameters.AddWithValue("?", RolId);
+
+                        // Ejecutar la consulta
+                        comandoModificar.ExecuteNonQuery();
+
+                    }
+                }
+            }
+            catch (OleDbException oleDbEx)
+            {
+                MessageBox.Show("Error de base de datos: " + oleDbEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Modificar Usuario!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        //Metodo para eliminar un usuario
+        public void EliminarUsuario(int id)
+        {
+            try
+            {
+                using (OleDbConnection conexion = new OleDbConnection(ruta))
+                {
+                    conexion.Open();
+                    string query = "DELETE FROM Usuarios WHERE Id_Usuario = ?";
+
+                    using (OleDbCommand comandoEliminar = new OleDbCommand(query, conexion))
+                    {
+                        comandoEliminar.Parameters.AddWithValue("?", id);
+
+                        // Ejecutar la consulta
+                        comandoEliminar.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (OleDbException oleDbEx)
+            {
+                MessageBox.Show("Error de base de datos: " + oleDbEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Modificar Usuario!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
+
 }

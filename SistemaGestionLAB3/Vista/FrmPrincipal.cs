@@ -55,13 +55,14 @@ namespace SistemaGestionLAB3
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            frmInventario formInventario = new frmInventario();
+            FrmInventario formInventario = new FrmInventario();
             formInventario.Show();
         }
 
         private void btnUusuarios_Click(object sender, EventArgs e)
         {
-
+            FrmUsuarios frmUsuarios = new FrmUsuarios();
+            frmUsuarios.ShowDialog();
         }
     }
 }
