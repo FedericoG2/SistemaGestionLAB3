@@ -38,6 +38,8 @@ namespace SistemaGestionLAB3.Vista
 
             InventarioDAL objProductos = new InventarioDAL();
             objProductos.Listar(dgvInventario);
+
+
         }
         private clsStock guardarDatos()
         {
