@@ -28,15 +28,15 @@ namespace SistemaGestionLAB3.Controlador
         {
             try
             {
-                // Establece la cadena de conexión
+               
                 conexion.ConnectionString = cadenaConexion;
-                conexion.Open(); // Intenta abrir la conexión
+                conexion.Open(); 
 
-                // Asocia el comando SQL a la conexión y define el tipo de comando (SQL)
+                
                 comando.Connection = conexion;
                 comando.CommandType = CommandType.Text;
 
-                MessageBox.Show("Conexión abierta correctamente."); // Mensaje de éxito
+                
             }
             catch (Exception ex)
             {
