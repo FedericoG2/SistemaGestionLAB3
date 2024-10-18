@@ -69,5 +69,25 @@ namespace SistemaGestionLAB3.Vista
 
 
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+                // Mostrar un cuadro de diálogo de confirmación
+            DialogResult resultado = MessageBox.Show($"¿Estás seguro de que deseas eliminar este usuario {txtNombre.Text} ?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            // Verificar si el usuario seleccionó "Yes"
+            if (resultado == DialogResult.Yes)
+            {
+                    DbLogin dbLogin = new DbLogin();
+                    dbLogin.EliminarUsuario(IdUsuario);
+                MessageBox.Show($"Usuario {txtNombre.Text} eliminado correctamente ");
+            }
+            else
+            {
+                // El usuario seleccionó "No", no se realiza ninguna acción
+                MessageBox.Show("Eliminación cancelada.", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            this.Close();
+        }
     }
 }

@@ -185,7 +185,6 @@ namespace SistemaGestionLAB3.Controlador
                             {
                                 MessageBox.Show("No se encontró el usuario.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
-
                         }
                     }
                 }
@@ -216,9 +215,39 @@ namespace SistemaGestionLAB3.Controlador
 
                         // Ejecutar la consulta
                         comandoModificar.ExecuteNonQuery();
+
                     }
                 }
+            }
+            catch (OleDbException oleDbEx)
+            {
+                MessageBox.Show("Error de base de datos: " + oleDbEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Modificar Usuario!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+
+        //Metodo para eliminar un usuario
+        public void EliminarUsuario(int id)
+        {
+            try
+            {
+                using (OleDbConnection conexion = new OleDbConnection(ruta))
+                {
+                    conexion.Open();
+                    string query = "DELETE FROM Usuarios WHERE Id_Usuario = ?";
+
+                    using (OleDbCommand comandoEliminar = new OleDbCommand(query, conexion))
+                    {
+                        comandoEliminar.Parameters.AddWithValue("?", id);
+
+                        // Ejecutar la consulta
+                        comandoEliminar.ExecuteNonQuery();
+                    }
+                }
             }
             catch (OleDbException oleDbEx)
             {

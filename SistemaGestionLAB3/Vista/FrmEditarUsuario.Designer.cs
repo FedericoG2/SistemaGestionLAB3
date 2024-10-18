@@ -40,6 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -80,28 +81,28 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(179, 22);
+            this.txtNombre.Location = new System.Drawing.Point(214, 19);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(116, 20);
             this.txtNombre.TabIndex = 4;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(179, 72);
+            this.txtUsername.Location = new System.Drawing.Point(214, 69);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(116, 20);
             this.txtUsername.TabIndex = 5;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(179, 129);
+            this.txtContraseña.Location = new System.Drawing.Point(214, 126);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(116, 20);
             this.txtContraseña.TabIndex = 6;
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(179, 175);
+            this.txtMail.Location = new System.Drawing.Point(214, 172);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(116, 20);
             this.txtMail.TabIndex = 7;
@@ -109,7 +110,7 @@
             // cmbRol
             // 
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(179, 223);
+            this.cmbRol.Location = new System.Drawing.Point(214, 220);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(116, 21);
             this.cmbRol.TabIndex = 8;
@@ -125,7 +126,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(20, 281);
+            this.btnGuardar.Location = new System.Drawing.Point(12, 278);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 29);
             this.btnGuardar.TabIndex = 10;
@@ -135,7 +136,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(193, 281);
+            this.btnVolver.Location = new System.Drawing.Point(120, 278);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(102, 29);
             this.btnVolver.TabIndex = 11;
@@ -143,11 +144,22 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(228, 278);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(102, 29);
+            this.btnEliminar.TabIndex = 12;
+            this.btnEliminar.Text = "Eliminar Usuario";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // FrmEditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 336);
+            this.ClientSize = new System.Drawing.Size(346, 336);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label5);
@@ -181,5 +193,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

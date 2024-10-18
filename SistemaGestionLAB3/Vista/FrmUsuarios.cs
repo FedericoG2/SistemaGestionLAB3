@@ -45,6 +45,10 @@ namespace SistemaGestionLAB3.Vista
             {
                 FrmEditarUsuario editarUsuarioForm = new FrmEditarUsuario(usuarioIdSeleccionado);
                 editarUsuarioForm.ShowDialog();
+
+                // Volver a cargar la grilla después de cerrar el formulario
+                DbLogin login = new DbLogin();
+                login.CargarUsuariosEnGrid(DgvUsuarios);
             }
             else
             {
@@ -70,6 +74,10 @@ namespace SistemaGestionLAB3.Vista
                 // Abre el formulario de editar
                 FrmEditarUsuario frmEditar = new FrmEditarUsuario(idUsuario);
                 frmEditar.ShowDialog();
+
+                // Volver a cargar la grilla después de cerrar el formulario
+                DbLogin login = new DbLogin();
+                login.CargarUsuariosEnGrid(DgvUsuarios);
             }
         }
     }
