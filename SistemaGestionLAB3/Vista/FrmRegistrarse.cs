@@ -50,6 +50,7 @@ namespace SistemaGestionLAB3.Vista
                 MessageBox.Show("Debe ingresar un nombre de usuario y una contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            // comentario
 
             // Convertir la firma a byte[]
             byte[] firmaBytes = ConvertirFirmaABytes(imagenFirma);
