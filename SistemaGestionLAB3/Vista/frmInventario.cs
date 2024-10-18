@@ -52,6 +52,7 @@ namespace SistemaGestionLAB3.Vista
 
 
 
+
             stockNuevo.Id = codigoStock;
             stockNuevo.Nombre = txtDescripcion.Text;
             stockNuevo.Precio = int.Parse(txtPrecio.Text);
