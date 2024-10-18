@@ -51,6 +51,7 @@ namespace SistemaGestionLAB3.Vista
             int.TryParse(txtCodigo.Text, out codigoStock);
 
 
+
             stockNuevo.Id = codigoStock;
             stockNuevo.Nombre = txtDescripcion.Text;
             stockNuevo.Precio = int.Parse(txtPrecio.Text);
