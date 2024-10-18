@@ -64,5 +64,12 @@ namespace SistemaGestionLAB3
             FrmUsuarios frmUsuarios = new FrmUsuarios();
             frmUsuarios.ShowDialog();
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            Ventas frmVentas = new Ventas();
+            frmVentas.ShowDialog();
+            this.Hide();
+        }
     }
 }
