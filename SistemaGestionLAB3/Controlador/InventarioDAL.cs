@@ -18,8 +18,7 @@ namespace SistemaGestionLAB3.Controlador
         private OleDbCommand comando = new OleDbCommand();
         //nos sirve para adaptar los datos que estan mal en la bd   
         private OleDbDataAdapter adaptador = new OleDbDataAdapter();
-        private string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\\Users\\mauro\\source\\repos\\prueba22\\SistemaGestionLAB3\\ModeloDB\\Inventario_db.accdb";
-
+        private string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.16.0;Data Source=ModeloDB\Inventario_db.accdb";
         private string Tabla = "Inventario";
 
         //Conexion y Prueba de conexion 
@@ -42,6 +41,7 @@ namespace SistemaGestionLAB3.Controlador
                 MessageBox.Show("Error al abrir la conexión: " + ex.Message); // Muestra el error si ocurre
             }
         }
+
 
         public void ProbarConexion()
         {
@@ -66,42 +66,70 @@ namespace SistemaGestionLAB3.Controlador
             }
         }
 
+
+
+        //public void Listar(DataGridView dgvInventario)
+        //{
+        //    try
+        //    {
+        //        using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
+        //        {
+        //            conexion.Open();
+
+        //            using (OleDbCommand comando = new OleDbCommand())
+        //            {
+        //                comando.Connection = conexion;
+        //                comando.CommandType = CommandType.TableDirect;
+        //                comando.CommandText = Tabla;
+
+        //                // Adaptar los datos
+        //                using (OleDbDataAdapter adaptador = new OleDbDataAdapter(comando))
+        //                {
+        //                    DataSet ds = new DataSet();
+        //                    adaptador.Fill(ds);
+        //                    dgvInventario.DataSource = ds.Tables[0];
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        MessageBox.Show("ERROR EN BD: " + e.Message);
+        //    }
+        //}
+
         public void Listar(DataGridView dgvInventario)
         {
             try
             {
-                //recibe la cadena de conexion
-                conexion.ConnectionString = cadenaConexion;
-                conexion.Open();
+                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
+                {
+                    conexion.Open();
 
-                //comandos de ordenes
-                comando.Connection = conexion;
-                //ponemos el tipo de comando, (3 tipos
-                //text(envia instrucciones sql),
-                //tabletDirect(trae la tabla))
-                comando.CommandType = CommandType.TableDirect;
-                //nombre de la tabla que vamos a traer 
-                comando.CommandText = Tabla;
+                    using (OleDbCommand comando = new OleDbCommand())
+                    {
+                        comando.Connection = conexion;
 
-                //adaptamos el comando configurado
-                adaptador = new OleDbDataAdapter(comando);
-                //objeto de clase dataset para poder cargar los datos 
-                DataSet ds = new DataSet();
-                //adaptamos el dataset
-                adaptador.Fill(ds);
+                        // Consulta con JOIN para obtener los datos del inventario y los nombres de los proveedores
+                        comando.CommandText = "SELECT i.id_Producto, i.Nombre AS Producto, i.Precio_Venta, i.Stock, p.Nombre_prov AS Proveedor " +
+                                              "FROM Inventario i " +
+                                              "INNER JOIN Proveedores p ON i.Id_Proveedor = p.Id_proveedor";
 
-                //dATAsOURCE TOMA EL CONTENDIDO COMPLETO DEL DATASET
-                dgvInventario.DataSource = ds.Tables[0];
-
-                //cerramos la conexion 
-                conexion.Close();
+                        // Adaptar los datos
+                        using (OleDbDataAdapter adaptador = new OleDbDataAdapter(comando))
+                        {
+                            DataSet ds = new DataSet();
+                            adaptador.Fill(ds);
+                            dgvInventario.DataSource = ds.Tables[0]; // Muestra los datos en el DataGridView
+                        }
+                    }
+                }
             }
             catch (Exception e)
             {
-                MessageBox.Show("ERROR EN BD " + e.ToString());
+                MessageBox.Show("ERROR EN BD: " + e.Message);
             }
         }
-
         public void Agregar(clsStock stock)
         {
             try
@@ -161,22 +189,22 @@ namespace SistemaGestionLAB3.Controlador
         {
             try
             {
-                conexiones(); // Abre la conexión
+                conexiones();
 
-                // Consulta SQL para modificar los valores
+                //  SQL para modificar los valores
                 comando.CommandText = "UPDATE Inventario SET Nombre = ?, Precio_Venta = ?, Stock = ?, Id_Proveedor = ? WHERE Id_Producto = ?";
 
-                // Limpia los parámetros del comando antes de agregar nuevos
+                
                 comando.Parameters.Clear();
 
-                // Asigna los valores a los parámetros en el mismo orden de la consulta
+               
                 comando.Parameters.AddWithValue("?", stock.Nombre);
                 comando.Parameters.AddWithValue("?", stock.Precio);
                 comando.Parameters.AddWithValue("?", stock.Stock);
-                comando.Parameters.AddWithValue("?", stock.Id_Proveedor - 1);
-                comando.Parameters.AddWithValue("?", stock.Id); // Código del producto a modificar (Id_Producto)
+                comando.Parameters.AddWithValue("?", stock.Id_Proveedor);
+                comando.Parameters.AddWithValue("?", stock.Id); 
 
-                // Ejecuta el comando (Update) para modificar los datos en la base de datos
+                // Ejecuta el comando 
                 comando.ExecuteNonQuery();
 
                 MessageBox.Show("Modificado correctamente");
@@ -187,12 +215,29 @@ namespace SistemaGestionLAB3.Controlador
             }
             finally
             {
-                // Cierra la conexión para evitar fugas de recursos
+                
                 if (conexion.State == ConnectionState.Open)
                 {
                     conexion.Close();
                 }
             }
+        }
+
+        public DataTable BuscarPorCodigo(int codigo)
+        {
+            conexiones(); // Método que abre la conexión
+
+            string query = "SELECT * FROM Inventario WHERE id_Producto = @Codigo";
+            comando.CommandText = query;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@Codigo", codigo);
+
+            OleDbDataAdapter adaptador = new OleDbDataAdapter(comando);
+            DataTable resultados = new DataTable();
+            adaptador.Fill(resultados); // Llena el DataTable con los resultados de la consulta
+
+            conexion.Close(); // Cierra la conexión
+            return resultados; // Retorna los resultados
         }
 
     }

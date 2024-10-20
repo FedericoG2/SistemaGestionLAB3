@@ -17,7 +17,7 @@ namespace SistemaGestionLAB3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmInventario());
+            Application.Run(new frmInventario());
         }
     }
 }
