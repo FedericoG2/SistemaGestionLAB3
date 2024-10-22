@@ -55,7 +55,7 @@ namespace SistemaGestionLAB3
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            FrmInventario formInventario = new FrmInventario();
+            frmInventario formInventario = new frmInventario();
             formInventario.Show();
         }
 

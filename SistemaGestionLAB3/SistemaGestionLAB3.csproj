@@ -66,8 +66,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\clsArcInventario.cs" />
+    <Compile Include="Controlador\clsStock.cs" />
     <Compile Include="Controlador\DbLogin.cs" />
     <Compile Include="Controlador\DbRol.cs" />
+    <Compile Include="Controlador\InventarioDAL.cs" />
     <Compile Include="Vista\FrmEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
