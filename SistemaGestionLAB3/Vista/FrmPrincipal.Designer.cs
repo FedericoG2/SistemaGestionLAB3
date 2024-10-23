@@ -35,7 +35,7 @@
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.btnAgenda = new System.Windows.Forms.Button();
+            this.btnPresupuesto = new System.Windows.Forms.Button();
             this.btnProvedores = new System.Windows.Forms.Button();
             this.btnMovimientos = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -78,7 +78,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnVentas);
             this.flowLayoutPanel1.Controls.Add(this.btnCompras);
             this.flowLayoutPanel1.Controls.Add(this.btnInventario);
-            this.flowLayoutPanel1.Controls.Add(this.btnAgenda);
+            this.flowLayoutPanel1.Controls.Add(this.btnPresupuesto);
             this.flowLayoutPanel1.Controls.Add(this.btnProvedores);
             this.flowLayoutPanel1.Controls.Add(this.btnMovimientos);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -143,18 +143,19 @@
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
-            // btnAgenda
+            // btnPresupuesto
             // 
-            this.btnAgenda.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAgenda.Image = global::SistemaGestionLAB3.Properties.Resources.imgAgenda;
-            this.btnAgenda.Location = new System.Drawing.Point(767, 3);
-            this.btnAgenda.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
-            this.btnAgenda.Name = "btnAgenda";
-            this.btnAgenda.Size = new System.Drawing.Size(159, 76);
-            this.btnAgenda.TabIndex = 5;
-            this.btnAgenda.Text = "Agenda";
-            this.btnAgenda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAgenda.UseVisualStyleBackColor = false;
+            this.btnPresupuesto.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPresupuesto.Image = global::SistemaGestionLAB3.Properties.Resources.imgAgenda;
+            this.btnPresupuesto.Location = new System.Drawing.Point(767, 3);
+            this.btnPresupuesto.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
+            this.btnPresupuesto.Name = "btnPresupuesto";
+            this.btnPresupuesto.Size = new System.Drawing.Size(159, 76);
+            this.btnPresupuesto.TabIndex = 5;
+            this.btnPresupuesto.Text = "Presupuesto";
+            this.btnPresupuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPresupuesto.UseVisualStyleBackColor = false;
+            this.btnPresupuesto.Click += new System.EventHandler(this.btnPresupuesto_Click);
             // 
             // btnProvedores
             // 
@@ -326,7 +327,7 @@
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.Button btnInventario;
-        private System.Windows.Forms.Button btnAgenda;
+        private System.Windows.Forms.Button btnPresupuesto;
         private System.Windows.Forms.Button btnProvedores;
         private System.Windows.Forms.Button btnMovimientos;
         private System.Windows.Forms.MenuStrip menuStrip1;
