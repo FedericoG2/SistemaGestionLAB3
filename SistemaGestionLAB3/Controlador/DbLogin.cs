@@ -14,7 +14,7 @@ namespace SistemaGestionLAB3.Controlador
     public class DbLogin
     {
         // Ruta
-        private string ruta = @"Provider =Microsoft.ACE.OLEDB.12.0;Data Source=ModeloDB\Inventario_db.accdb";
+        private string ruta = @"Provider =Microsoft.ACE.OLEDB.12.0;Data Source=..\..\ModeloDB\Inventario_db.accdb";
 
         // Metodo para ingresar
         public bool VerificarUsuario(string nombre, string password)
