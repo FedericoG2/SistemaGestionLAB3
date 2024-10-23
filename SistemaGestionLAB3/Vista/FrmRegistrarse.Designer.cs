@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.panelFirma = new System.Windows.Forms.Panel();
+            this.lblIngreseFirma = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNuevaContraseña = new System.Windows.Forms.Label();
+            this.lblNuevoNombre = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panelFirma = new System.Windows.Forms.Panel();
-            this.btnBorrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,13 +48,13 @@
             // 
             this.groupBox1.Controls.Add(this.btnBorrar);
             this.groupBox1.Controls.Add(this.panelFirma);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblIngreseFirma);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnRegistrarse);
             this.groupBox1.Controls.Add(this.txtContraseña);
             this.groupBox1.Controls.Add(this.txtNombreUsuario);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblNuevaContraseña);
+            this.groupBox1.Controls.Add(this.lblNuevoNombre);
             this.groupBox1.Location = new System.Drawing.Point(683, 14);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
@@ -63,6 +63,35 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevo Registro";
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(14, 339);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(112, 35);
+            this.btnBorrar.TabIndex = 9;
+            this.btnBorrar.Text = "Borrar Firma";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // panelFirma
+            // 
+            this.panelFirma.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelFirma.Location = new System.Drawing.Point(14, 226);
+            this.panelFirma.Name = "panelFirma";
+            this.panelFirma.Size = new System.Drawing.Size(403, 105);
+            this.panelFirma.TabIndex = 8;
+            // 
+            // lblIngreseFirma
+            // 
+            this.lblIngreseFirma.AutoSize = true;
+            this.lblIngreseFirma.Location = new System.Drawing.Point(10, 203);
+            this.lblIngreseFirma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIngreseFirma.Name = "lblIngreseFirma";
+            this.lblIngreseFirma.Size = new System.Drawing.Size(132, 20);
+            this.lblIngreseFirma.TabIndex = 7;
+            this.lblIngreseFirma.Text = "Ingrese su Firma:";
             // 
             // btnCancelar
             // 
@@ -106,54 +135,25 @@
             this.txtNombreUsuario.Size = new System.Drawing.Size(292, 26);
             this.txtNombreUsuario.TabIndex = 2;
             // 
-            // label2
+            // lblNuevaContraseña
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 128);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Ingrese su contraseña";
+            this.lblNuevaContraseña.AutoSize = true;
+            this.lblNuevaContraseña.Location = new System.Drawing.Point(9, 128);
+            this.lblNuevaContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNuevaContraseña.Name = "lblNuevaContraseña";
+            this.lblNuevaContraseña.Size = new System.Drawing.Size(168, 20);
+            this.lblNuevaContraseña.TabIndex = 1;
+            this.lblNuevaContraseña.Text = "Ingrese su contraseña";
             // 
-            // label1
+            // lblNuevoNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ingrese su nombre de usuario";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 203);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Ingrese su Firma:";
-            // 
-            // panelFirma
-            // 
-            this.panelFirma.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panelFirma.Location = new System.Drawing.Point(14, 226);
-            this.panelFirma.Name = "panelFirma";
-            this.panelFirma.Size = new System.Drawing.Size(403, 105);
-            this.panelFirma.TabIndex = 8;
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Location = new System.Drawing.Point(14, 339);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(112, 35);
-            this.btnBorrar.TabIndex = 9;
-            this.btnBorrar.Text = "Borrar Firma";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            this.lblNuevoNombre.AutoSize = true;
+            this.lblNuevoNombre.Location = new System.Drawing.Point(9, 52);
+            this.lblNuevoNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNuevoNombre.Name = "lblNuevoNombre";
+            this.lblNuevoNombre.Size = new System.Drawing.Size(220, 20);
+            this.lblNuevoNombre.TabIndex = 0;
+            this.lblNuevoNombre.Text = "Ingrese su nombre de usuario";
             // 
             // pictureBox1
             // 
@@ -191,11 +191,11 @@
         private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtNombreUsuario;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNuevaContraseña;
+        private System.Windows.Forms.Label lblNuevoNombre;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Panel panelFirma;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblIngreseFirma;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

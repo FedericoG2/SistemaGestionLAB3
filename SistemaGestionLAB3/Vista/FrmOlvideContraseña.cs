@@ -17,8 +17,28 @@ namespace SistemaGestionLAB3.Vista
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            // Asignar los eventos KeyDown a los TextBox
+            txtNombreUsuario.KeyDown += new KeyEventHandler(txtNombreUsuario_KeyDown);
+            txtContraseña.KeyDown += new KeyEventHandler(txtContraseña_KeyDown);
+        }
+        // metodo para manejar el evento de la tecla enter
+        private void txtNombreUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Llama al mismo método que se utiliza en btnIngresar_Click
+                btnConfirmar.PerformClick();
+            }
         }
 
+        private void txtContraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Llama al mismo método que se utiliza en btnIngresar_Click
+                btnConfirmar.PerformClick();
+            }
+        }
         private void FrmOlvideContraseña_Load(object sender, EventArgs e)
         {
 
