@@ -76,7 +76,7 @@
             // 
             this.panelFirma.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelFirma.Location = new System.Drawing.Point(9, 147);
-            this.panelFirma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFirma.Margin = new System.Windows.Forms.Padding(2);
             this.panelFirma.Name = "panelFirma";
             this.panelFirma.Size = new System.Drawing.Size(269, 68);
             this.panelFirma.TabIndex = 8;
@@ -92,12 +92,12 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Image = global::SistemaGestionLAB3.Properties.Resources.imgCerrar;
+            this.btnCancelar.Image = global::SistemaGestionLAB3.Properties.Resources.icoVolver;
             this.btnCancelar.Location = new System.Drawing.Point(161, 249);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(99, 60);
             this.btnCancelar.TabIndex = 6;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Volver";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);

@@ -76,7 +76,7 @@
             // 
             this.cmbFecha.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFecha.FormattingEnabled = true;
-            this.cmbFecha.Location = new System.Drawing.Point(39, 26);
+            this.cmbFecha.Location = new System.Drawing.Point(321, 19);
             this.cmbFecha.Name = "cmbFecha";
             this.cmbFecha.Size = new System.Drawing.Size(161, 21);
             this.cmbFecha.TabIndex = 1;
@@ -84,7 +84,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(331, 27);
+            this.txtBuscar.Location = new System.Drawing.Point(44, 19);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(167, 20);
             this.txtBuscar.TabIndex = 6;
@@ -92,7 +92,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::SistemaGestionLAB3.Properties.Resources.lupa;
-            this.btnBuscar.Location = new System.Drawing.Point(224, 51);
+            this.btnBuscar.Location = new System.Drawing.Point(204, 51);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(91, 50);
             this.btnBuscar.TabIndex = 7;
@@ -114,7 +114,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Image = global::SistemaGestionLAB3.Properties.Resources.entar;
+            this.btnVolver.Image = global::SistemaGestionLAB3.Properties.Resources.icoVolver;
             this.btnVolver.Location = new System.Drawing.Point(657, 388);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(94, 50);

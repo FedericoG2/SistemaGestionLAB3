@@ -121,11 +121,11 @@
     <Compile Include="Vista\FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Presupuesto.cs">
+    <Compile Include="Vista\frmPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Presupuesto.Designer.cs">
-      <DependentUpon>Presupuesto.cs</DependentUpon>
+    <Compile Include="Vista\frmPresupuesto.Designer.cs">
+      <DependentUpon>frmPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Ventas.cs">
       <SubType>Form</SubType>
@@ -167,8 +167,8 @@
     <EmbeddedResource Include="Vista\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Presupuesto.resx">
-      <DependentUpon>Presupuesto.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\frmPresupuesto.resx">
+      <DependentUpon>frmPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
@@ -239,6 +239,7 @@
     <Content Include="ModeloDB\Inventario_db.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icoVolver.png" />
     <Content Include="Resources\sonidoInicio.wav" />
   </ItemGroup>
   <ItemGroup>

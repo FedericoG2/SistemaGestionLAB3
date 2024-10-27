@@ -143,7 +143,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Image = global::SistemaGestionLAB3.Properties.Resources.entar;
+            this.btnVolver.Image = global::SistemaGestionLAB3.Properties.Resources.icoVolver;
             this.btnVolver.Location = new System.Drawing.Point(368, 219);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(102, 52);

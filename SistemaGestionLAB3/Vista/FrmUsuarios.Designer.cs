@@ -37,12 +37,12 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Image = global::SistemaGestionLAB3.Properties.Resources.icoSalir;
+            this.btnVolver.Image = global::SistemaGestionLAB3.Properties.Resources.icoVolver;
             this.btnVolver.Location = new System.Drawing.Point(12, 263);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(115, 61);
             this.btnVolver.TabIndex = 0;
-            this.btnVolver.Text = "Volver al menu";
+            this.btnVolver.Text = "Volver";
             this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);

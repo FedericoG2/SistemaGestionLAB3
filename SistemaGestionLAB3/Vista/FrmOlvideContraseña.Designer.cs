@@ -56,12 +56,12 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Image = global::SistemaGestionLAB3.Properties.Resources.imgCerrar;
+            this.btnCancelar.Image = global::SistemaGestionLAB3.Properties.Resources.icoVolver;
             this.btnCancelar.Location = new System.Drawing.Point(131, 123);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 60);
             this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Volver";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);

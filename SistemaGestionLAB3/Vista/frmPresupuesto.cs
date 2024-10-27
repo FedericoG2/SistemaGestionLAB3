@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace SistemaGestionLAB3.Vista
 {
-    public partial class Presupuesto : Form
+    public partial class frmPresupuesto : Form
     {
-        public Presupuesto()
+        public frmPresupuesto()
         {
             InitializeComponent();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPresupuesto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

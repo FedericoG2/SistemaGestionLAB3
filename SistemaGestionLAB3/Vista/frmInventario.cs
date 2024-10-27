@@ -81,7 +81,8 @@ namespace SistemaGestionLAB3.Vista
         }
         private void cmbProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //InventarioDAL inventarioDAL = new InventarioDAL();
+            //inventarioDAL.LlenarComboBoxProveedores(cmbProveedor);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

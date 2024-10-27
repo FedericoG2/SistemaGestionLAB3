@@ -74,9 +74,19 @@ namespace SistemaGestionLAB3
 
         private void btnPresupuesto_Click(object sender, EventArgs e)
         {
-            Presupuesto frmPresupuesto = new Presupuesto();
+            frmPresupuesto frmPresupuesto = new frmPresupuesto();
             frmPresupuesto.ShowDialog();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
