@@ -42,15 +42,16 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnExportar = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.accionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnExportar = new System.Windows.Forms.Button();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -110,7 +111,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(199, 16);
+            this.label3.Location = new System.Drawing.Point(183, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 11;
@@ -145,13 +146,14 @@
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox2.Controls.Add(this.txtPrecio);
+            this.groupBox2.Controls.Add(this.btnExportar);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label);
             this.groupBox2.Controls.Add(this.cmbProveedor);
-            this.groupBox2.Location = new System.Drawing.Point(106, 106);
+            this.groupBox2.Location = new System.Drawing.Point(32, 106);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.groupBox2.Size = new System.Drawing.Size(448, 66);
+            this.groupBox2.Size = new System.Drawing.Size(625, 66);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             // 
@@ -180,73 +182,11 @@
             this.cmbProveedor.TabIndex = 29;
             this.cmbProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbProveedor_SelectedIndexChanged);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = global::SistemaGestionLAB3.Properties.Resources.lupa;
-            this.btnBuscar.Location = new System.Drawing.Point(386, 19);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(105, 41);
-            this.btnBuscar.TabIndex = 25;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportar.Image = global::SistemaGestionLAB3.Properties.Resources.excel;
-            this.btnExportar.Location = new System.Drawing.Point(514, 19);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(105, 41);
-            this.btnExportar.TabIndex = 23;
-            this.btnExportar.Text = "Exportar";
-            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExportar.UseVisualStyleBackColor = true;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrar.Image = global::SistemaGestionLAB3.Properties.Resources.imgCerrar;
-            this.btnBorrar.Location = new System.Drawing.Point(267, 19);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(105, 41);
-            this.btnBorrar.TabIndex = 22;
-            this.btnBorrar.Text = "Eliminar";
-            this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Image = global::SistemaGestionLAB3.Properties.Resources.imgNuevo;
-            this.btnModificar.Location = new System.Drawing.Point(135, 19);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(105, 41);
-            this.btnModificar.TabIndex = 21;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Image = global::SistemaGestionLAB3.Properties.Resources.imgGuardar;
-            this.btnAgregar.Location = new System.Drawing.Point(9, 19);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(105, 41);
-            this.btnAgregar.TabIndex = 20;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox3.Controls.Add(this.btnSalir);
             this.groupBox3.Controls.Add(this.btnAgregar);
-            this.groupBox3.Controls.Add(this.btnExportar);
             this.groupBox3.Controls.Add(this.btnBuscar);
             this.groupBox3.Controls.Add(this.btnModificar);
             this.groupBox3.Controls.Add(this.btnBorrar);
@@ -265,14 +205,6 @@
             this.accionesToolStripMenuItem.Text = "Acciones";
             this.accionesToolStripMenuItem.Click += new System.EventHandler(this.accionesToolStripMenuItem_Click);
             // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Image = global::SistemaGestionLAB3.Properties.Resources.icoSalir;
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
             // menuStrip2
             // 
             this.menuStrip2.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -283,6 +215,89 @@
             this.menuStrip2.Size = new System.Drawing.Size(701, 24);
             this.menuStrip2.TabIndex = 28;
             this.menuStrip2.Text = "menuStrip2";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Image = global::SistemaGestionLAB3.Properties.Resources.icoVolver;
+            this.btnSalir.Location = new System.Drawing.Point(505, 19);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(105, 41);
+            this.btnSalir.TabIndex = 26;
+            this.btnSalir.Text = "Volver";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = global::SistemaGestionLAB3.Properties.Resources.imgGuardar;
+            this.btnAgregar.Location = new System.Drawing.Point(9, 19);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(105, 41);
+            this.btnAgregar.TabIndex = 20;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::SistemaGestionLAB3.Properties.Resources.lupa;
+            this.btnBuscar.Location = new System.Drawing.Point(386, 19);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(105, 41);
+            this.btnBuscar.TabIndex = 25;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Image = global::SistemaGestionLAB3.Properties.Resources.imgNuevo;
+            this.btnModificar.Location = new System.Drawing.Point(135, 19);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(105, 41);
+            this.btnModificar.TabIndex = 21;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrar.Image = global::SistemaGestionLAB3.Properties.Resources.imgCerrar;
+            this.btnBorrar.Location = new System.Drawing.Point(267, 19);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(105, 41);
+            this.btnBorrar.TabIndex = 22;
+            this.btnBorrar.Text = "Eliminar";
+            this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.Image = global::SistemaGestionLAB3.Properties.Resources.excel;
+            this.btnExportar.Location = new System.Drawing.Point(505, 16);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(105, 41);
+            this.btnExportar.TabIndex = 23;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Image = global::SistemaGestionLAB3.Properties.Resources.icoSalir;
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // frmInventario
             // 
@@ -336,5 +351,6 @@
         private System.Windows.Forms.ToolStripMenuItem accionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

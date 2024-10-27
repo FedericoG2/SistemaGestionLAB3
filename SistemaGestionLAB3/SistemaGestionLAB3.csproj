@@ -73,6 +73,12 @@
     <Compile Include="Controlador\DbLogin.cs" />
     <Compile Include="Controlador\DbRol.cs" />
     <Compile Include="Controlador\InventarioDAL.cs" />
+    <Compile Include="Vista\frmBuscarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmBuscarInventario.Designer.cs">
+      <DependentUpon>frmBuscarInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmBuscarPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     <Compile Include="Vista\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\frmBuscarInventario.resx">
+      <DependentUpon>frmBuscarInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmBuscarPresupuesto.resx">
       <DependentUpon>frmBuscarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>

@@ -90,13 +90,21 @@ namespace SistemaGestionLAB3.Vista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            InventarioDAL objProductos = new InventarioDAL();
+            if (txtCodigo.Text != "" && txtDescripcion.Text != "" && txtCantidad.Text != "" && txtPrecio.Text != "" && cmbProveedor.SelectedIndex != -1)
+            {
+                InventarioDAL objProductos = new InventarioDAL();
             objProductos.Modificar(guardarDatos());
 
             LimpiarCampos();
 
 
             llenarGrilla();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione Articulo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
         private clsStock eliminarDatos()
         {
@@ -120,15 +128,22 @@ namespace SistemaGestionLAB3.Vista
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            
-            InventarioDAL produc = new InventarioDAL();
+            if (txtCodigo.Text != "" && txtDescripcion.Text != "" && txtCantidad.Text != "" && txtPrecio.Text != "" && cmbProveedor.SelectedIndex != -1)
+            {
+                InventarioDAL produc = new InventarioDAL();
             produc.Eliminar(eliminarDatos());
 
             txtCodigo.Clear();
             llenarGrilla();
             LimpiarCampos();
-        }
 
+            }
+            else
+            {
+                MessageBox.Show("Seleccione Articulo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+        }
         private void seleccionar(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -151,17 +166,10 @@ namespace SistemaGestionLAB3.Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // Instancia para la conexion
-           InventarioDAL conexion = new InventarioDAL();
-            // DataTable para almacenar datos de la BD 
-            DataTable resultadoBusqueda = new DataTable();
-
-            int codigo = int.Parse(txtCodigo.Text);
-
-            resultadoBusqueda = conexion.BuscarPorCodigo(codigo);
-
-            dgvInventario.DataSource = resultadoBusqueda;
-            LimpiarCampos();
+            
+            frmBuscarInventario buscarInventario = new frmBuscarInventario();
+            buscarInventario.ShowDialog();  
+            
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -171,6 +179,10 @@ namespace SistemaGestionLAB3.Vista
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
+            if (txtCodigo.Text!= "" && txtDescripcion.Text != "" && txtCantidad.Text != "" &&  txtPrecio.Text != "" && cmbProveedor.SelectedIndex != -1)
+            {
+
+            
             clsArcInventario obj= new clsArcInventario();
 
             string textoSeleccionado = cmbProveedor.SelectedItem.ToString();
@@ -178,7 +190,16 @@ namespace SistemaGestionLAB3.Vista
             obj.grabar(txtCodigo.Text, txtDescripcion.Text, txtCantidad.Text,txtPrecio.Text, textoSeleccionado); ;
             MessageBox.Show("Cargados");
             LimpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("Complete Todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

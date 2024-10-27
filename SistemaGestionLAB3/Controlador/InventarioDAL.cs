@@ -262,11 +262,12 @@ namespace SistemaGestionLAB3.Controlador
         }
 
 
+      
         public DataTable BuscarPorCodigo(int codigo)
         {
             conexiones(); // Método que abre la conexión
 
-            string query = "SELECT * FROM Inventario WHERE id_Producto = @Codigo";
+            string query = "SELECT * FROM Inventario WHERE Id_Producto = @Codigo";
             comando.CommandText = query;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@Codigo", codigo);
@@ -278,45 +279,22 @@ namespace SistemaGestionLAB3.Controlador
             conexion.Close(); // Cierra la conexión
             return resultados; // Retorna los resultados
         }
-        public void LlenarComboBoxProveedores(ComboBox cmbProveedores)
+        public DataTable BuscarPorNombre(string Nombre)
         {
-            try
-            {
-                conexiones(); 
+            conexiones(); // Método que abre la conexión
 
-                string query = "SELECT Id_proveedor, Nombre_prov FROM Proveedores"; // Consulta para obtener los datos de los proveedores
-                comando.CommandText = query;
-                comando.Parameters.Clear();
+            string query = "SELECT * FROM Inventario WHERE Nombre LIKE @Nombre";
+            comando.CommandText = query;
+            comando.Parameters.Clear();
 
-                // Ejecuta el comando y obtiene los resultados
-                using (OleDbDataReader reader = comando.ExecuteReader())
-                {
-                    // Limpia el ComboBox antes de llenarlo
-                    cmbProveedores.Items.Clear();
+            comando.Parameters.AddWithValue("@NombreCliente", "%" + Nombre + "%");
 
-                    // Recorre los resultados y agrega cada proveedor al ComboBox
-                    while (reader.Read())
-                    {
-                        
-                        cmbProveedores.Items.Add(new KeyValuePair<int, string>((int)reader["Id_proveedor"], reader["Nombre_prov"].ToString()));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar proveedores: " + ex.Message);
-            }
-            finally
-            {
-                if (conexion.State == ConnectionState.Open)
-                {
-                    conexion.Close(); // Asegura cerrar la conexión
-                }
-            }
+            OleDbDataAdapter adaptador = new OleDbDataAdapter(comando);
+            DataTable resultados = new DataTable();
+            adaptador.Fill(resultados); // Llena el DataTable con los resultados de la consulta
 
-            // Configura el ComboBox para mostrar el nombre del proveedor y ocultar el ID
-            cmbProveedores.DisplayMember = "Value";
-            cmbProveedores.ValueMember = "Key";
+            conexion.Close(); // Cierra la conexión
+            return resultados; // Retorna los resultados
         }
 
     }

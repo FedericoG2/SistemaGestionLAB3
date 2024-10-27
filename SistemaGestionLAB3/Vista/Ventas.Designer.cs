@@ -122,7 +122,7 @@
             this.btnVolver.Text = "Volver ";
             this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.button2_Click);
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // Ventas
             // 
