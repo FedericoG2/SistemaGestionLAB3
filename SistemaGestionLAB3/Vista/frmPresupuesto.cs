@@ -39,7 +39,7 @@ namespace SistemaGestionLAB3.Vista
                 string textoSeleccionado = cmbTipoPresupuesto.SelectedItem.ToString();
 
                 presupuesto.grabarPresupuestos(
-                    txtNumPresu.Text,
+                    
                     txtNombreCliente.Text,
                     txtDireccion.Text,
                     textoSeleccionado,
@@ -143,6 +143,7 @@ namespace SistemaGestionLAB3.Vista
             
             if(txtNombreCliente.Text != "" && txtDireccion.Text != "" && txtNombre.Text != "" && txtCantidad.Text != "" && txtPrecios.Text != "" && cmbTipoPresupuesto.SelectedItem != null) 
             { 
+
             ClsPresupuesto nuevoPresupuesto = new ClsPresupuesto();
             Cls_dbPresupuesto nuevoPresu = guardarDatos(); // Guarda el nuevo stock
             nuevoPresupuesto.AgregarPresupuesto(nuevoPresu); // Agrega el nuevo producto a la base de datos

@@ -75,6 +75,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.flowLayoutPanel1.Controls.Add(this.btnUusuarios);
             this.flowLayoutPanel1.Controls.Add(this.btnVentas);
             this.flowLayoutPanel1.Controls.Add(this.btnCompras);

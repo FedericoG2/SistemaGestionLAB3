@@ -39,7 +39,7 @@ namespace SistemaGestionLAB3.Controlador
             ad.Dispose();
         }
         
-        public void grabarPresupuestos(string codigo, string NombreCliente, string Direccion, 
+        public void grabarPresupuestos(string NombreCliente, string Direccion, 
             string Tipo, string NombreArt, string cant , string precios )
         {
             StreamWriter ad = new StreamWriter(NombrePresupuesto, true);
@@ -47,7 +47,7 @@ namespace SistemaGestionLAB3.Controlador
             bool archivoExiste = File.Exists(NombrePresupuesto);
             if (!archivoExiste)
             {
-                ad.Write("codigo" + ";");
+                
                 ad.Write("NombreCliente" + ";");
                 ad.Write("Direccion" + ";");
                 ad.Write("Tipo" + ";");
@@ -58,7 +58,7 @@ namespace SistemaGestionLAB3.Controlador
             }
 
 
-            ad.Write(codigo + ";");
+            
             ad.Write(NombreCliente + ";");
             ad.Write(Direccion + ";");
             ad.Write(Tipo + ";");

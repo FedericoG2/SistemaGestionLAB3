@@ -97,8 +97,7 @@ namespace SistemaGestionLAB3.Controlador
                 comando.Parameters.AddWithValue("@Precio_Art", nuevoPresu.Precio);
                 
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Presupuesto Nuevo agregado correctamente." +
-                    "Agregado a la PLanilla");
+                MessageBox.Show("Nuevo Presupuesto Agregado y Guardado");
             }
             catch (Exception e)
             {

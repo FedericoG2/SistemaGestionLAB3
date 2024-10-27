@@ -33,6 +33,7 @@ namespace SistemaGestionLAB3.Vista
             if (resultados.Rows.Count > 0)
             {
                 dgvBuscar.DataSource = resultados; // Asigna el DataTable al DataGridView
+                txtNumeroPresupuesto.Clear();
             }
             else
             {
@@ -53,6 +54,7 @@ namespace SistemaGestionLAB3.Vista
             if (resultados.Rows.Count > 0)
             {
                 dgvBuscar.DataSource = resultados; // Asigna el DataTable al DataGridView
+                txtNombreCliente.Clear();
             }
             else
             {
@@ -78,6 +80,7 @@ namespace SistemaGestionLAB3.Vista
             if (resultados.Rows.Count > 0)
             {
                 dgvBuscar.DataSource = resultados; // Asigna el DataTable al DataGridView
+                txtArticulo.Clear();
             }
             else
             {

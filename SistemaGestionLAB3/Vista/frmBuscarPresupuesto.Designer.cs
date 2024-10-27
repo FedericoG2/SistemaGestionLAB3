@@ -79,6 +79,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNumeroPresupuesto);
             this.groupBox1.Controls.Add(this.btnBuscarPresupuesto);
@@ -91,6 +92,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtNombreCliente);
             this.groupBox2.Controls.Add(this.btnBuscarCliente);
@@ -131,6 +133,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.txtArticulo);
             this.groupBox3.Controls.Add(this.btnBuscarArt);

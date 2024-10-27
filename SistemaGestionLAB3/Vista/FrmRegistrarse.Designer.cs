@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegistrarse));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.panelFirma = new System.Windows.Forms.Panel();
@@ -46,6 +47,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.btnBorrar);
             this.groupBox1.Controls.Add(this.panelFirma);
             this.groupBox1.Controls.Add(this.lblIngreseFirma);
@@ -163,6 +165,7 @@
             this.ClientSize = new System.Drawing.Size(763, 334);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRegistrarse";
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.FrmRegistrarse_Load);

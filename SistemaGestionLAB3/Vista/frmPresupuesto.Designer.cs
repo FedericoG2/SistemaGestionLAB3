@@ -62,6 +62,7 @@
             // 
             // groupCliente
             // 
+            this.groupCliente.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupCliente.Controls.Add(this.cmbTipoPresupuesto);
             this.groupCliente.Controls.Add(this.label4);
             this.groupCliente.Controls.Add(this.txtDireccion);
@@ -144,6 +145,7 @@
             // 
             // txtPrecio
             // 
+            this.txtPrecio.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtPrecio.Controls.Add(this.groupBox1);
             this.txtPrecio.Controls.Add(this.btnCargar);
             this.txtPrecio.Controls.Add(this.label7);
@@ -161,6 +163,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtCodigo);

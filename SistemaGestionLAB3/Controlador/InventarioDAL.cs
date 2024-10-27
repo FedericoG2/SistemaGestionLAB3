@@ -222,45 +222,45 @@ namespace SistemaGestionLAB3.Controlador
                 conexion.Close(); // Asegúrate de cerrar la conexión después de ejecutar el comando
             }
         }
+    
+
         public void Modificar(clsStock stock)
         {
             try
             {
                 conexiones();
 
-                //  SQL para modificar los valores
+                // SQL para modificar los valores
                 comando.CommandText = "UPDATE Inventario SET Nombre = ?, Precio_Venta = ?, Stock = ?, Id_Proveedor = ? WHERE Id_Producto = ?";
 
-                
+                // Limpia los parámetros antes de agregarlos
                 comando.Parameters.Clear();
 
-               
+                // Agrega los parámetros en el mismo orden que en la consulta
                 comando.Parameters.AddWithValue("?", stock.Nombre);
                 comando.Parameters.AddWithValue("?", stock.Precio);
                 comando.Parameters.AddWithValue("?", stock.Stock);
-                comando.Parameters.AddWithValue("?", stock.Id_Proveedor + 1);
-                if(stock.Id < 5) {
-                    MessageBox.Show("Stock inferior a 5"); 
+                comando.Parameters.AddWithValue("?", stock.Id_Proveedor);
                 comando.Parameters.AddWithValue("?", stock.Id);
-                }
-                // Ejecuta el comando 
+
+                // Ejecuta el comando
                 comando.ExecuteNonQuery();
 
                 MessageBox.Show("Modificado correctamente");
             }
             catch (Exception e)
             {
-                MessageBox.Show("ERROR EN BD " + e.ToString());
+                MessageBox.Show("ERROR EN BD: " + e.Message);
             }
             finally
             {
-                
                 if (conexion.State == ConnectionState.Open)
                 {
                     conexion.Close();
                 }
             }
         }
+
 
         public DataTable BuscarPorCodigo(int codigo)
         {

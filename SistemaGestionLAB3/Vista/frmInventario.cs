@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemaGestionLAB3.Vista
 {
@@ -25,6 +26,8 @@ namespace SistemaGestionLAB3.Vista
             cmbProveedor.Items.Add("MagicCloth");
             cmbProveedor.Items.Add("Importados");
             cmbProveedor.Items.Add("C.A");
+
+            txtCodigo.Enabled = false;
 
         }
 
@@ -53,7 +56,7 @@ namespace SistemaGestionLAB3.Vista
             stockNuevo.Nombre = txtDescripcion.Text;
             stockNuevo.Precio = int.Parse(txtPrecio.Text);
             stockNuevo.Stock = int.Parse(txtCantidad.Text);
-            stockNuevo.Id_Proveedor = codProveedor + 1 ;
+            stockNuevo.Id_Proveedor = codProveedor ;
 
             return stockNuevo;
         }
@@ -132,6 +135,7 @@ namespace SistemaGestionLAB3.Vista
             int indice1 = e.RowIndex;
             dgvInventario.ClearSelection();
 
+
             
             if (indice1 >= 0)
             {
@@ -139,7 +143,9 @@ namespace SistemaGestionLAB3.Vista
                 txtDescripcion.Text = dgvInventario.Rows[indice1].Cells[1].Value.ToString();
                 txtCantidad.Text = dgvInventario.Rows[indice1].Cells[3].Value.ToString();
                 txtPrecio.Text = dgvInventario.Rows[indice1].Cells[2].Value.ToString();
-                
+                string valorCombo = dgvInventario.Rows[indice1].Cells[4].Value.ToString();
+                cmbProveedor.SelectedItem = valorCombo;
+
             }
         }
 

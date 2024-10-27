@@ -19,7 +19,7 @@ namespace SistemaGestionLAB3
             Application.SetCompatibleTextRenderingDefault(false);
 
            
-            Application.Run(new frmPresupuesto());
+            Application.Run(new frmInventario());
 
         }
     }

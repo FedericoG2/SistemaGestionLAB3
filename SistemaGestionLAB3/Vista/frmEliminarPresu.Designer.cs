@@ -54,6 +54,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.btnEliminarPresu);
             this.groupBox1.Controls.Add(this.txtNumeroPresu);
             this.groupBox1.Controls.Add(this.label1);

@@ -69,7 +69,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(220, 29);
+            this.label3.Location = new System.Drawing.Point(220, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 3;
@@ -107,7 +107,7 @@
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(214, 46);
+            this.txtMail.Location = new System.Drawing.Point(214, 33);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(139, 20);
             this.txtMail.TabIndex = 7;
@@ -115,7 +115,7 @@
             // cmbRol
             // 
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(26, 45);
+            this.cmbRol.Location = new System.Drawing.Point(26, 32);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(116, 21);
             this.cmbRol.TabIndex = 8;
@@ -123,7 +123,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 29);
+            this.label5.Location = new System.Drawing.Point(23, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 13);
             this.label5.TabIndex = 9;
@@ -132,7 +132,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Image = global::SistemaGestionLAB3.Properties.Resources.imgGuardar;
-            this.btnGuardar.Location = new System.Drawing.Point(73, 219);
+            this.btnGuardar.Location = new System.Drawing.Point(33, 210);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 52);
             this.btnGuardar.TabIndex = 10;
@@ -144,7 +144,7 @@
             // btnVolver
             // 
             this.btnVolver.Image = global::SistemaGestionLAB3.Properties.Resources.icoVolver;
-            this.btnVolver.Location = new System.Drawing.Point(368, 219);
+            this.btnVolver.Location = new System.Drawing.Point(391, 210);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(102, 52);
             this.btnVolver.TabIndex = 11;
@@ -156,7 +156,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = global::SistemaGestionLAB3.Properties.Resources.eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(217, 219);
+            this.btnEliminar.Location = new System.Drawing.Point(217, 210);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(102, 52);
             this.btnEliminar.TabIndex = 12;
@@ -167,6 +167,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label2);
@@ -182,13 +183,14 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cmbRol);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtMail);
-            this.groupBox2.Location = new System.Drawing.Point(59, 118);
+            this.groupBox2.Location = new System.Drawing.Point(73, 118);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(411, 72);
+            this.groupBox2.Size = new System.Drawing.Size(369, 72);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             // 
