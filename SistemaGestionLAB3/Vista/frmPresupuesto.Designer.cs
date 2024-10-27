@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPresupuesto));
-            this.btnExportar = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.groupCliente = new System.Windows.Forms.GroupBox();
+            this.cmbTipoPresupuesto = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,10 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,35 +49,16 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.dgvPresupuesto = new System.Windows.Forms.DataGridView();
-            this.cmbTipoPresupuesto = new System.Windows.Forms.ComboBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnBuscarPresupuesto = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.groupCliente.SuspendLayout();
             this.txtPrecio.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPresupuesto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.Image = global::SistemaGestionLAB3.Properties.Resources.exporExcel;
-            this.btnExportar.Location = new System.Drawing.Point(590, 416);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(104, 49);
-            this.btnExportar.TabIndex = 2;
-            this.btnExportar.Text = "Exportar";
-            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExportar.UseVisualStyleBackColor = true;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Image = global::SistemaGestionLAB3.Properties.Resources.icoVolver;
-            this.btnVolver.Location = new System.Drawing.Point(57, 420);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(103, 45);
-            this.btnVolver.TabIndex = 3;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVolver.UseVisualStyleBackColor = true;
             // 
             // groupCliente
             // 
@@ -98,6 +76,14 @@
             this.groupCliente.TabIndex = 4;
             this.groupCliente.TabStop = false;
             this.groupCliente.Text = "Datos Cliente";
+            // 
+            // cmbTipoPresupuesto
+            // 
+            this.cmbTipoPresupuesto.FormattingEnabled = true;
+            this.cmbTipoPresupuesto.Location = new System.Drawing.Point(453, 38);
+            this.cmbTipoPresupuesto.Name = "cmbTipoPresupuesto";
+            this.cmbTipoPresupuesto.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoPresupuesto.TabIndex = 7;
             // 
             // label4
             // 
@@ -142,7 +128,7 @@
             // 
             // txtNombreCliente
             // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(148, 38);
+            this.txtNombreCliente.Location = new System.Drawing.Point(145, 38);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(100, 20);
             this.txtNombreCliente.TabIndex = 7;
@@ -159,7 +145,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Controls.Add(this.groupBox1);
-            this.txtPrecio.Controls.Add(this.button2);
+            this.txtPrecio.Controls.Add(this.btnCargar);
             this.txtPrecio.Controls.Add(this.label7);
             this.txtPrecio.Controls.Add(this.label6);
             this.txtPrecio.Controls.Add(this.label5);
@@ -168,33 +154,22 @@
             this.txtPrecio.Controls.Add(this.txtNombre);
             this.txtPrecio.Location = new System.Drawing.Point(57, 108);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(637, 84);
+            this.txtPrecio.Size = new System.Drawing.Size(637, 91);
             this.txtPrecio.TabIndex = 5;
             this.txtPrecio.TabStop = false;
             this.txtPrecio.Text = "Articulos";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(161, 84);
+            this.groupBox1.Size = new System.Drawing.Size(161, 91);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Articulos";
-            // 
-            // button1
-            // 
-            this.button1.Image = global::SistemaGestionLAB3.Properties.Resources.lupa;
-            this.button1.Location = new System.Drawing.Point(18, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 28);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Buscar";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -211,17 +186,6 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(87, 20);
             this.txtCodigo.TabIndex = 7;
-            // 
-            // button2
-            // 
-            this.button2.Image = global::SistemaGestionLAB3.Properties.Resources.imgCompras;
-            this.button2.Location = new System.Drawing.Point(515, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 39);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Cargar";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -273,30 +237,84 @@
             // 
             // dgvPresupuesto
             // 
+            this.dgvPresupuesto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPresupuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPresupuesto.Location = new System.Drawing.Point(57, 200);
+            this.dgvPresupuesto.Location = new System.Drawing.Point(57, 217);
             this.dgvPresupuesto.Name = "dgvPresupuesto";
             this.dgvPresupuesto.Size = new System.Drawing.Size(637, 214);
             this.dgvPresupuesto.TabIndex = 6;
             // 
-            // cmbTipoPresupuesto
+            // btnEliminar
             // 
-            this.cmbTipoPresupuesto.FormattingEnabled = true;
-            this.cmbTipoPresupuesto.Location = new System.Drawing.Point(453, 38);
-            this.cmbTipoPresupuesto.Name = "cmbTipoPresupuesto";
-            this.cmbTipoPresupuesto.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoPresupuesto.TabIndex = 7;
+            this.btnEliminar.Image = global::SistemaGestionLAB3.Properties.Resources.eliminar;
+            this.btnEliminar.Location = new System.Drawing.Point(539, 437);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(155, 50);
+            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.Text = "Eliminar Presupuesto";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnBuscarPresupuesto
+            // 
+            this.btnBuscarPresupuesto.Image = global::SistemaGestionLAB3.Properties.Resources.lupa;
+            this.btnBuscarPresupuesto.Location = new System.Drawing.Point(317, 437);
+            this.btnBuscarPresupuesto.Name = "btnBuscarPresupuesto";
+            this.btnBuscarPresupuesto.Size = new System.Drawing.Size(141, 50);
+            this.btnBuscarPresupuesto.TabIndex = 8;
+            this.btnBuscarPresupuesto.Text = "Buscar Presupuesto";
+            this.btnBuscarPresupuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscarPresupuesto.UseVisualStyleBackColor = true;
+            this.btnBuscarPresupuesto.Click += new System.EventHandler(this.btnBuscarPresupuesto_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::SistemaGestionLAB3.Properties.Resources.lupa;
+            this.btnBuscar.Location = new System.Drawing.Point(28, 50);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(101, 36);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Text = "Buscar Articulo";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.Image = global::SistemaGestionLAB3.Properties.Resources.imgCompras;
+            this.btnCargar.Location = new System.Drawing.Point(515, 19);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(103, 45);
+            this.btnCargar.TabIndex = 8;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Image = global::SistemaGestionLAB3.Properties.Resources.icoVolver;
+            this.btnVolver.Location = new System.Drawing.Point(57, 437);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(129, 50);
+            this.btnVolver.TabIndex = 3;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 472);
+            this.ClientSize = new System.Drawing.Size(800, 499);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnBuscarPresupuesto);
             this.Controls.Add(this.dgvPresupuesto);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.groupCliente);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.btnExportar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPresupuesto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -314,7 +332,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.GroupBox groupCliente;
         private System.Windows.Forms.GroupBox txtPrecio;
@@ -334,9 +351,11 @@
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmbTipoPresupuesto;
+        private System.Windows.Forms.Button btnBuscarPresupuesto;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

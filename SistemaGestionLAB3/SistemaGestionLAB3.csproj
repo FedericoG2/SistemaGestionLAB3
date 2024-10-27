@@ -67,15 +67,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\clsArcInventario.cs" />
+    <Compile Include="Controlador\ClsPresupuesto.cs" />
     <Compile Include="Controlador\clsStock.cs" />
+    <Compile Include="Controlador\Cls_dbPresupuesto.cs" />
     <Compile Include="Controlador\DbLogin.cs" />
     <Compile Include="Controlador\DbRol.cs" />
     <Compile Include="Controlador\InventarioDAL.cs" />
+    <Compile Include="Vista\frmBuscarPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmBuscarPresupuesto.Designer.cs">
+      <DependentUpon>frmBuscarPresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\FrmEditarUsuario.Designer.cs">
       <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmEliminarPresu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmEliminarPresu.Designer.cs">
+      <DependentUpon>frmEliminarPresu.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\frmInventario.cs">
       <SubType>Form</SubType>
@@ -133,8 +147,14 @@
     <Compile Include="Vista\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\frmBuscarPresupuesto.resx">
+      <DependentUpon>frmBuscarPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmEditarUsuario.resx">
       <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmEliminarPresu.resx">
+      <DependentUpon>frmEliminarPresu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmInventario.resx">
       <DependentUpon>frmInventario.cs</DependentUpon>
