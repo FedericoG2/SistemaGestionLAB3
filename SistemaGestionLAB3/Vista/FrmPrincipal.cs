@@ -78,5 +78,11 @@ namespace SistemaGestionLAB3
             frmPresupuesto.ShowDialog();
             this.Hide();
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            frmClientes frm = new frmClientes();
+            frm.ShowDialog();
+        }
     }
 }

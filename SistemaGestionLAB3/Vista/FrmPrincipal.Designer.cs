@@ -38,6 +38,7 @@
             this.btnPresupuesto = new System.Windows.Forms.Button();
             this.btnProvedores = new System.Windows.Forms.Button();
             this.btnMovimientos = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +68,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(1361, 101);
+            this.groupBox1.Size = new System.Drawing.Size(1512, 101);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -81,11 +82,12 @@
             this.flowLayoutPanel1.Controls.Add(this.btnPresupuesto);
             this.flowLayoutPanel1.Controls.Add(this.btnProvedores);
             this.flowLayoutPanel1.Controls.Add(this.btnMovimientos);
+            this.flowLayoutPanel1.Controls.Add(this.btnClientes);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1355, 82);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1506, 82);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnUusuarios
@@ -183,6 +185,20 @@
             this.btnMovimientos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMovimientos.UseVisualStyleBackColor = false;
             // 
+            // btnClientes
+            // 
+            this.btnClientes.BackColor = System.Drawing.SystemColors.Control;
+            this.btnClientes.Image = global::SistemaGestionLAB3.Properties.Resources.imgAgenda;
+            this.btnClientes.Location = new System.Drawing.Point(1332, 3);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(159, 76);
+            this.btnClientes.TabIndex = 8;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -191,7 +207,7 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1370, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1502, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -299,7 +315,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::SistemaGestionLAB3.Properties.Resources.fondoPrincipal___copia;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 597);
+            this.ClientSize = new System.Drawing.Size(1502, 597);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -344,5 +360,6 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contenidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.Button btnClientes;
     }
 }
