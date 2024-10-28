@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuarios));
             this.btnVolver = new System.Windows.Forms.Button();
             this.DgvUsuarios = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -36,11 +37,13 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.Image = global::SistemaGestionLAB3.Properties.Resources.icoVolver;
             this.btnVolver.Location = new System.Drawing.Point(12, 263);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(115, 61);
             this.btnVolver.TabIndex = 0;
-            this.btnVolver.Text = "Volver al menu";
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -61,11 +64,13 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Image = global::SistemaGestionLAB3.Properties.Resources.imgUsuarios;
             this.btnEditar.Location = new System.Drawing.Point(12, 12);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(115, 61);
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar un usuario";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -77,7 +82,9 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.DgvUsuarios);
             this.Controls.Add(this.btnVolver);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.FrmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).EndInit();

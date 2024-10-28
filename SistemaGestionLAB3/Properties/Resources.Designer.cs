@@ -133,6 +133,16 @@ namespace SistemaGestionLAB3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icoVolver {
+            get {
+                object obj = ResourceManager.GetObject("icoVolver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgAbrir {
             get {
                 object obj = ResourceManager.GetObject("imgAbrir", resourceCulture);

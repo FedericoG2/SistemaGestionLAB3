@@ -11,7 +11,7 @@ namespace SistemaGestionLAB3.Controlador
     internal class clsArcInventario
     {
         public string NombreArchivo = "InvntarioProductos.csv";
-
+        public string NombrePresupuesto = "Presupuestos.csv";
         public void grabar(string codigo, string Descrip, string cant, string precio, string proveedor)
         {
             StreamWriter ad = new StreamWriter(NombreArchivo, true);
@@ -33,6 +33,38 @@ namespace SistemaGestionLAB3.Controlador
             ad.Write(cant + ";");    
             ad.Write(precio + ";");  
             ad.Write(proveedor);     
+            ad.WriteLine();
+
+            ad.Close();
+            ad.Dispose();
+        }
+        
+        public void grabarPresupuestos(string NombreCliente, string Direccion, 
+            string Tipo, string NombreArt, string cant , string precios )
+        {
+            StreamWriter ad = new StreamWriter(NombrePresupuesto, true);
+
+            bool archivoExiste = File.Exists(NombrePresupuesto);
+            if (!archivoExiste)
+            {
+                
+                ad.Write("NombreCliente" + ";");
+                ad.Write("Direccion" + ";");
+                ad.Write("Tipo" + ";");
+                ad.Write("NombreArt" + ";");
+                ad.Write("cant" + ";");
+                ad.Write("precios");
+                ad.WriteLine();
+            }
+
+
+            
+            ad.Write(NombreCliente + ";");
+            ad.Write(Direccion + ";");
+            ad.Write(Tipo + ";");
+            ad.Write(NombreArt + ";");
+            ad.Write(cant + ";");
+            ad.Write(precios);
             ad.WriteLine();
 
             ad.Close();

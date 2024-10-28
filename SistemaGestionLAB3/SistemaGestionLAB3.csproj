@@ -67,15 +67,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\clsArcInventario.cs" />
+    <Compile Include="Controlador\ClsPresupuesto.cs" />
     <Compile Include="Controlador\clsStock.cs" />
+    <Compile Include="Controlador\Cls_dbPresupuesto.cs" />
     <Compile Include="Controlador\DbLogin.cs" />
     <Compile Include="Controlador\DbRol.cs" />
     <Compile Include="Controlador\InventarioDAL.cs" />
+    <Compile Include="Vista\frmBuscarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmBuscarInventario.Designer.cs">
+      <DependentUpon>frmBuscarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmBuscarPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmBuscarPresupuesto.Designer.cs">
+      <DependentUpon>frmBuscarPresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\FrmEditarUsuario.Designer.cs">
       <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmEliminarPresu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmEliminarPresu.Designer.cs">
+      <DependentUpon>frmEliminarPresu.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\frmInventario.cs">
       <SubType>Form</SubType>
@@ -121,11 +141,11 @@
     <Compile Include="Vista\FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Presupuesto.cs">
+    <Compile Include="Vista\frmPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Presupuesto.Designer.cs">
-      <DependentUpon>Presupuesto.cs</DependentUpon>
+    <Compile Include="Vista\frmPresupuesto.Designer.cs">
+      <DependentUpon>frmPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Ventas.cs">
       <SubType>Form</SubType>
@@ -133,8 +153,17 @@
     <Compile Include="Vista\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\frmBuscarInventario.resx">
+      <DependentUpon>frmBuscarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmBuscarPresupuesto.resx">
+      <DependentUpon>frmBuscarPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmEditarUsuario.resx">
       <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmEliminarPresu.resx">
+      <DependentUpon>frmEliminarPresu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmInventario.resx">
       <DependentUpon>frmInventario.cs</DependentUpon>
@@ -167,8 +196,8 @@
     <EmbeddedResource Include="Vista\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Presupuesto.resx">
-      <DependentUpon>Presupuesto.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\frmPresupuesto.resx">
+      <DependentUpon>frmPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
@@ -239,6 +268,7 @@
     <Content Include="ModeloDB\Inventario_db.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icoVolver.png" />
     <Content Include="Resources\sonidoInicio.wav" />
   </ItemGroup>
   <ItemGroup>

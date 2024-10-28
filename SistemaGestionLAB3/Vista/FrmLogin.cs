@@ -44,7 +44,9 @@ namespace SistemaGestionLAB3
 
                 // Mostrar el formulario de carga de manera no modal
                 inicioForm.Show();
-           }
+                this.Hide(); // Ocultar el formulario de login antes de cerrarlo
+                
+                }
            else
            {
                 MessageBox.Show("Usuario o contraseña incorrecto!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);

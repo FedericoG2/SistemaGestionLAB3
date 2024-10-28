@@ -209,11 +209,9 @@ namespace SistemaGestionLAB3.Vista
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-            FrmPrincipal principal = new FrmPrincipal();
-            principal.Show();
-            this.Hide();
+            this.Close();
         }
     }
 

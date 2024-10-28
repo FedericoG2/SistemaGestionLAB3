@@ -133,20 +133,17 @@
   <data name="imgUsuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgUsuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgPrincipal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgPrincipal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="entar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\entar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgCompras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgCompras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fondoPrincipal - copia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondoPrincipal - copia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sonidoInicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sonidoInicio.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="imgVentas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgVentas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgInventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgInventario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,14 +151,23 @@
   <data name="fondoInicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondoInicio.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imgProveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgProveedores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgAbrir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgAbrir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fondoPrincipal - copia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondoPrincipal - copia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgPrincipal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgPrincipal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exporExcel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exporExcel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,16 +178,13 @@
   <data name="imgAgenda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgAgenda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgProveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgProveedores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgVentas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgVentas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgMovimientos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgMovimientos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icoVolver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icoVolver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

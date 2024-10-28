@@ -52,6 +52,7 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contenidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -74,6 +75,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.flowLayoutPanel1.Controls.Add(this.btnUusuarios);
             this.flowLayoutPanel1.Controls.Add(this.btnVentas);
             this.flowLayoutPanel1.Controls.Add(this.btnCompras);
@@ -128,6 +130,7 @@
             this.btnCompras.Text = "Compras";
             this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCompras.UseVisualStyleBackColor = false;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
             // btnInventario
             // 
@@ -292,6 +295,20 @@
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de.. ";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = global::SistemaGestionLAB3.Properties.Resources.icoSalir;
+            this.button1.Location = new System.Drawing.Point(1249, 552);
+            this.button1.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 45);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Cerrar Sistema";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,6 +317,7 @@
             this.BackgroundImage = global::SistemaGestionLAB3.Properties.Resources.fondoPrincipal___copia;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 597);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -344,5 +362,6 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contenidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
