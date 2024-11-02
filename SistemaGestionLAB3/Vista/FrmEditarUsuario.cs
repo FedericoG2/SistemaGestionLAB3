@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -63,11 +64,18 @@ namespace SistemaGestionLAB3.Vista
             }
             else
             {
-                DbLogin dbLogin = new DbLogin();
-                dbLogin.ModificarUsuario(IdUsuario, txtNombre.Text, txtUsername.Text, txtMail.Text, txtContraseña.Text, cmbRol.SelectedValue.ToString());
+                try
+                {
+                    DbLogin dbLogin = new DbLogin();
+                    dbLogin.ModificarUsuario(IdUsuario, txtNombre.Text, txtUsername.Text, txtMail.Text, txtContraseña.Text, cmbRol.SelectedValue.ToString());
+                    MessageBox.Show($"Usuario {txtNombre.Text} Modificado correctamente ");
+                    this.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error al Modificar Usuario!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);    
+                }
             }
-
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

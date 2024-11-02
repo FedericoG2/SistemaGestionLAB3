@@ -198,14 +198,14 @@ namespace SistemaGestionLAB3.Controlador
         }
 
         //Metodo para la actualizacion de Usuarios
-        public void ModificarUsuario(int id, string Nombre, string Username, string Mail, string Contraseña, string RolId)
+        public void ModificarUsuario(int IdUsuarios, string Nombre, string Username, string Mail, string Contraseña, string RolId)
         {
             try
             {
                 using (OleDbConnection conexion = new OleDbConnection(ruta))
                 {
                     conexion.Open();
-                    string query = "UPDATE Usuarios SET Nombre = ?, Username = ?, Contraseña = ?, Mail = ?, IdRoles = ? WHERE Id_Usuario = ?";
+                    string query = "UPDATE Usuarios SET Nombre = ?, Username = ?, Contraseña = ?, Mail = ?, IdRoles = ? WHERE Id_Usuario ="+ IdUsuarios;
 
                     using (OleDbCommand comandoModificar = new OleDbCommand(query, conexion))
                     {
